@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="16" passed="10" failed="3" skipped="3">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-06T09:19:22 BRT" name="Default suite" finished-at="2025-01-06T09:19:43 BRT" duration-ms="20758">
+    <groups>
+    </groups>
+    <test started-at="2025-01-06T09:19:22 BRT" name="Default test" finished-at="2025-01-06T09:19:43 BRT" duration-ms="20758">
+      <class name="DefaultTesting">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:22 BRT" name="setUp" finished-at="2025-01-06T09:19:32 BRT" duration-ms="10034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLogin()[pri:1, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:32 BRT" name="testLogin" finished-at="2025-01-06T09:19:33 BRT" duration-ms="879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method signature="testViewCare()[pri:2, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:33 BRT" name="testViewCare" finished-at="2025-01-06T09:19:39 BRT" depends-on-methods="DefaultTesting.testLogin" duration-ms="5790" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewCare -->
+        <test-method signature="testFoundClientSalesPoint()[pri:3, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:39 BRT" name="testFoundClientSalesPoint" finished-at="2025-01-06T09:19:39 BRT" depends-on-methods="DefaultTesting.testViewCare" duration-ms="431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFoundClientSalesPoint -->
+        <test-method signature="testFilterSalesPointByName()[pri:3, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:39 BRT" name="testFilterSalesPointByName" finished-at="2025-01-06T09:19:39 BRT" depends-on-methods="DefaultTesting.testFoundClientSalesPoint" duration-ms="313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFilterSalesPointByName -->
+        <test-method signature="testOnlineEquipements()[pri:3, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:39 BRT" name="testOnlineEquipements" finished-at="2025-01-06T09:19:40 BRT" depends-on-methods="DefaultTesting.testViewCare" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnlineEquipements -->
+        <test-method signature="testAssertNumberOfCLients()[pri:4, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:40 BRT" name="testAssertNumberOfCLients" finished-at="2025-01-06T09:19:40 BRT" depends-on-methods="DefaultTesting.testFoundClientSalesPoint" duration-ms="41" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Number of Shown Sales Points And Number of Sales Points Are Different expected [1] but found [2]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [1] but found [2]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at DefaultTesting.testAssertNumberOfCLients(DefaultTesting.java:327)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAssertNumberOfCLients -->
+        <test-method signature="testFetchListAndClickFirstSalePoint()[pri:4, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:40 BRT" name="testFetchListAndClickFirstSalePoint" finished-at="2025-01-06T09:19:40 BRT" depends-on-methods="DefaultTesting.testFoundClientSalesPoint" duration-ms="258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFetchListAndClickFirstSalePoint -->
+        <test-method signature="testLastInfoFirstMonitorableIsValidAgata()[pri:5, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:40 BRT" name="testLastInfoFirstMonitorableIsValidAgata" finished-at="2025-01-06T09:19:40 BRT" depends-on-methods="DefaultTesting.testFetchListAndClickFirstSalePoint" duration-ms="579" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The dates do not match. expected [2025-01-06] but found [2025-01-03]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The dates do not match. expected [2025-01-06] but found [2025-01-03]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at DefaultTesting.validateLastInfo(DefaultTesting.java:152)
+at DefaultTesting.testLastInfoFirstMonitorableIsValidAgata(DefaultTesting.java:388)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLastInfoFirstMonitorableIsValidAgata -->
+        <test-method signature="testLastInfoFirstMonitorableIsValidController()[pri:5, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:40 BRT" name="testLastInfoFirstMonitorableIsValidController" finished-at="2025-01-06T09:19:41 BRT" depends-on-methods="DefaultTesting.testFetchListAndClickFirstSalePoint" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLastInfoFirstMonitorableIsValidController -->
+        <test-method signature="testValidateNameSalesPoint()[pri:5, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:41 BRT" name="testValidateNameSalesPoint" finished-at="2025-01-06T09:19:41 BRT" depends-on-methods="DefaultTesting.testFetchListAndClickFirstSalePoint" duration-ms="57" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidateNameSalesPoint -->
+        <test-method signature="testValidatesNumberOfOS()[pri:5, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:41 BRT" name="testValidatesNumberOfOS" finished-at="2025-01-06T09:19:41 BRT" depends-on-methods="DefaultTesting.testFetchListAndClickFirstSalePoint" duration-ms="20" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[OS Number Does Not Match expected [2] but found [0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at DefaultTesting.testValidatesNumberOfOS(DefaultTesting.java:371)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidatesNumberOfOS -->
+        <test-method signature="testAcessEquipmentController()[pri:6, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:41 BRT" name="testAcessEquipmentController" finished-at="2025-01-06T09:19:43 BRT" depends-on-methods="DefaultTesting.testLastInfoFirstMonitorableIsValidController" duration-ms="2151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAcessEquipmentController -->
+        <test-method signature="testAcessEquipmentAgata()[pri:7, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:43 BRT" name="testAcessEquipmentAgata" finished-at="2025-01-06T09:19:43 BRT" depends-on-methods="DefaultTesting.testLastInfoFirstMonitorableIsValidAgata" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DefaultTesting.testAcessEquipmentAgata()[pri:7, instance:DefaultTesting@294425a7] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DefaultTesting.testAcessEquipmentAgata()[pri:7, instance:DefaultTesting@294425a7] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAcessEquipmentAgata -->
+        <test-method signature="testGoBackFromEquipment1()[pri:7, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:43 BRT" name="testGoBackFromEquipment1" finished-at="2025-01-06T09:19:43 BRT" depends-on-methods="DefaultTesting.testAcessEquipmentController" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoBackFromEquipment1 -->
+        <test-method signature="testGoBackFromEquipment2()[pri:7, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:43 BRT" name="testGoBackFromEquipment2" finished-at="2025-01-06T09:19:43 BRT" depends-on-methods="DefaultTesting.testAcessEquipmentAgata" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DefaultTesting.testGoBackFromEquipment2()[pri:7, instance:DefaultTesting@294425a7] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DefaultTesting.testGoBackFromEquipment2()[pri:7, instance:DefaultTesting@294425a7] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoBackFromEquipment2 -->
+        <test-method signature="testGoBackFromSalesPointl()[pri:8, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:43 BRT" name="testGoBackFromSalesPointl" finished-at="2025-01-06T09:19:43 BRT" depends-on-methods="DefaultTesting.testGoBackFromEquipment2" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DefaultTesting.testGoBackFromSalesPointl()[pri:8, instance:DefaultTesting@294425a7] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DefaultTesting.testGoBackFromSalesPointl()[pri:8, instance:DefaultTesting@294425a7] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoBackFromSalesPointl -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:DefaultTesting@294425a7]" started-at="2025-01-06T09:19:43 BRT" name="tearDown" finished-at="2025-01-06T09:19:43 BRT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- DefaultTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
