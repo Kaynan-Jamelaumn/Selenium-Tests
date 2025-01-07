@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\enricky.hipolito\AppData\Local\Temp\testng-eclipse-465332577\testng-customsuite.xml</span>
+                    <span>C:\Users\enricky.hipolito\AppData\Local\Temp\testng-eclipse--1128702650\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">16 methods, 3 failed,  3 skipped,  10 passed</span>
+                    <span class="method-stats">16 methods, 4 failed,  3 skipped,  9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,6 +102,11 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testAcessEquipmentController">testAcessEquipmentController</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testAssertNumberOfCLients">testAssertNumberOfCLients</a> <!-- method navigator-link -->
@@ -138,7 +143,7 @@
                       <br/>
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testGoBackFromSalesPointl">testGoBackFromSalesPointl</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testGoBackFromSalesPoint">testGoBackFromSalesPoint</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Default_suite -->
@@ -150,11 +155,6 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testAcessEquipmentController">testAcessEquipmentController</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="DefaultTesting" class="method navigator-link" hash-for-method="testFetchListAndClickFirstSalePoint">testFetchListAndClickFirstSalePoint</a> <!-- method navigator-link -->
@@ -220,16 +220,55 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testAcessEquipmentController">
+                  </a> <!-- testAcessEquipmentController -->
+                  <span class="method-name">testAcessEquipmentController</span>
+                  <div class="stack-trace">java.lang.AssertionError: Popup &apos;offlinePopup&apos; should not be displayed. Equipment is offline.
+	at org.testng.Assert.fail(Assert.java:99)
+	at DefaultTesting.accessEquipment(DefaultTesting.java:191)
+	at DefaultTesting.testAcessEquipmentController(DefaultTesting.java:423)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testAssertNumberOfCLients">
                   </a> <!-- testAssertNumberOfCLients -->
                   <span class="method-name">testAssertNumberOfCLients</span>
-                  <div class="stack-trace">java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [1] but found [2]
+                  <div class="stack-trace">java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:907)
-	at DefaultTesting.testAssertNumberOfCLients(DefaultTesting.java:327)
+	at DefaultTesting.testAssertNumberOfCLients(DefaultTesting.java:354)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -265,13 +304,12 @@
                   <a name="testLastInfoFirstMonitorableIsValidAgata">
                   </a> <!-- testLastInfoFirstMonitorableIsValidAgata -->
                   <span class="method-name">testLastInfoFirstMonitorableIsValidAgata</span>
-                  <div class="stack-trace">java.lang.AssertionError: The dates do not match. expected [2025-01-06] but found [2025-01-03]
+                  <div class="stack-trace">java.lang.AssertionError: The time difference is more than 6 minutes. expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at DefaultTesting.validateLastInfo(DefaultTesting.java:152)
-	at DefaultTesting.testLastInfoFirstMonitorableIsValidAgata(DefaultTesting.java:388)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at DefaultTesting.validateLastInfo(DefaultTesting.java:155)
+	at DefaultTesting.testLastInfoFirstMonitorableIsValidAgata(DefaultTesting.java:415)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -313,7 +351,7 @@
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:907)
-	at DefaultTesting.testValidatesNumberOfOS(DefaultTesting.java:371)
+	at DefaultTesting.testValidatesNumberOfOS(DefaultTesting.java:398)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -412,10 +450,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testGoBackFromSalesPointl">
-                  </a> <!-- testGoBackFromSalesPointl -->
-                  <span class="method-name">testGoBackFromSalesPointl</span>
-                  <div class="stack-trace">java.lang.Throwable: Method DefaultTesting.testGoBackFromSalesPointl()[pri:8, instance:DefaultTesting@294425a7] depends on not successfully finished methods
+                  <a name="testGoBackFromSalesPoint">
+                  </a> <!-- testGoBackFromSalesPoint -->
+                  <span class="method-name">testGoBackFromSalesPoint</span>
+                  <div class="stack-trace">java.lang.Throwable: Method DefaultTesting.testGoBackFromSalesPoint()[pri:8, instance:DefaultTesting@294425a7] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -447,13 +485,6 @@
               <span class="class-name">DefaultTesting</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testAcessEquipmentController">
-                  </a> <!-- testAcessEquipmentController -->
-                  <span class="method-name">testAcessEquipmentController</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="testFetchListAndClickFirstSalePoint">
@@ -522,7 +553,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\enricky.hipolito\AppData\Local\Temp\testng-eclipse-465332577\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\enricky.hipolito\AppData\Local\Temp\testng-eclipse--1128702650\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -575,72 +606,72 @@ data.addRows(16);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testViewCare')
 data.setCell(0, 2, 'DefaultTesting')
-data.setCell(0, 3, 5790);
+data.setCell(0, 3, 5410);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testAcessEquipmentController')
 data.setCell(1, 2, 'DefaultTesting')
-data.setCell(1, 3, 2151);
+data.setCell(1, 3, 1559);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testLogin')
 data.setCell(2, 2, 'DefaultTesting')
-data.setCell(2, 3, 879);
+data.setCell(2, 3, 742);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testLastInfoFirstMonitorableIsValidAgata')
+data.setCell(3, 1, 'testFoundClientSalesPoint')
 data.setCell(3, 2, 'DefaultTesting')
-data.setCell(3, 3, 579);
+data.setCell(3, 3, 609);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testFoundClientSalesPoint')
+data.setCell(4, 1, 'testLastInfoFirstMonitorableIsValidAgata')
 data.setCell(4, 2, 'DefaultTesting')
-data.setCell(4, 3, 431);
+data.setCell(4, 3, 561);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testFilterSalesPointByName')
 data.setCell(5, 2, 'DefaultTesting')
-data.setCell(5, 3, 313);
+data.setCell(5, 3, 336);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'testFetchListAndClickFirstSalePoint')
 data.setCell(6, 2, 'DefaultTesting')
-data.setCell(6, 3, 258);
+data.setCell(6, 3, 243);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'testOnlineEquipements')
 data.setCell(7, 2, 'DefaultTesting')
-data.setCell(7, 3, 94);
+data.setCell(7, 3, 95);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'testValidateNameSalesPoint')
 data.setCell(8, 2, 'DefaultTesting')
-data.setCell(8, 3, 57);
+data.setCell(8, 3, 58);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'testAssertNumberOfCLients')
 data.setCell(9, 2, 'DefaultTesting')
-data.setCell(9, 3, 41);
+data.setCell(9, 3, 36);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'testLastInfoFirstMonitorableIsValidController')
 data.setCell(10, 2, 'DefaultTesting')
-data.setCell(10, 3, 26);
+data.setCell(10, 3, 29);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'testValidatesNumberOfOS')
 data.setCell(11, 2, 'DefaultTesting')
-data.setCell(11, 3, 20);
+data.setCell(11, 3, 18);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'testGoBackFromEquipment1')
 data.setCell(12, 2, 'DefaultTesting')
-data.setCell(12, 3, 12);
+data.setCell(12, 3, 14);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testGoBackFromSalesPointl')
+data.setCell(13, 1, 'testGoBackFromEquipment2')
 data.setCell(13, 2, 'DefaultTesting')
 data.setCell(13, 3, 0);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testAcessEquipmentAgata')
+data.setCell(14, 1, 'testGoBackFromSalesPoint')
 data.setCell(14, 2, 'DefaultTesting')
 data.setCell(14, 3, 0);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'testGoBackFromEquipment2')
+data.setCell(15, 1, 'testAcessEquipmentAgata')
 data.setCell(15, 2, 'DefaultTesting')
 data.setCell(15, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -673,77 +704,79 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testLogin</span>
-                <span class="method-start">10048 ms</span>
+                <span class="method-start">14542 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testViewCare</span>
-                <span class="method-start">10937 ms</span>
+                <span class="method-start">15292 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFoundClientSalesPoint</span>
-                <span class="method-start">16729 ms</span>
+                <span class="method-start">20703 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByName</span>
-                <span class="method-start">17163 ms</span>
+                <span class="method-start">21314 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testOnlineEquipements</span>
-                <span class="method-start">17478 ms</span>
+                <span class="method-start">21651 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testAssertNumberOfCLients</span>
-                <span class="method-start">17574 ms</span>
+                <span class="method-start">21747 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFetchListAndClickFirstSalePoint</span>
-                <span class="method-start">17617 ms</span>
+                <span class="method-start">21786 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testLastInfoFirstMonitorableIsValidAgata</span>
-                <span class="method-start">17878 ms</span>
+                <span class="method-start">22031 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLastInfoFirstMonitorableIsValidController</span>
-                <span class="method-start">18459 ms</span>
+                <span class="method-start">22593 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testValidateNameSalesPoint</span>
-                <span class="method-start">18488 ms</span>
+                <span class="method-start">22623 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testValidatesNumberOfOS</span>
-                <span class="method-start">18546 ms</span>
+                <span class="method-start">22683 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testAcessEquipmentController</span>
-                <span class="method-start">18568 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testAcessEquipmentAgata</span>
-                <span class="method-start">20721 ms</span>
+                <span class="method-start">22703 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGoBackFromEquipment1</span>
-                <span class="method-start">20723 ms</span>
+                <span class="method-start">24264 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testAcessEquipmentAgata</span>
+                <span class="method-start">24280 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGoBackFromEquipment2</span>
-                <span class="method-start">20736 ms</span>
+                <span class="method-start">24283 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testGoBackFromSalesPointl</span>
-                <span class="method-start">20739 ms</span>
+                <span class="method-name">testGoBackFromSalesPoint</span>
+                <span class="method-start">24287 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">20741 ms</span>
+                <span class="method-start">24291 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

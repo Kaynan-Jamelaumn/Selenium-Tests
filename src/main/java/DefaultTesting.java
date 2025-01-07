@@ -1,4 +1,5 @@
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -162,7 +163,10 @@ public class DefaultTesting {
 
     private void accessEquipment(WebElement row, String script, String... args) {
         WebElement footer = row.findElement(By.className("card-footer"));
-        WebElement button = footer.findElements(By.tagName("div")).get(1);
+        WebElement button = footer.findElement(By.tagName("button"));
+        Assert.assertNotNull(button, "Element 'button' not found");
+        button.click();
+        /*
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         if (args.length > 0) {
@@ -170,10 +174,27 @@ public class DefaultTesting {
         } else {
             js.executeScript(script);
         }
+        */
 
-        waitForElement(By.className("loading"));
-        waitForElementToDisappear(By.className("loading"));
-        System.out.println("Loading completed.");
+        // Espera até que o popup "offline" esteja visível (usando WebDriverWait)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // wait until 2 seconds
+        try {
+            WebElement offlinePopup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("info_mensagem")));
+
+            if (offlinePopup.isDisplayed()) {
+            	//Find Parement
+                WebElement parentElement = offlinePopup.findElement(By.xpath("../.."));
+                WebElement siblingDivCloseButton = parentElement.findElement(By.className("modal-footer"));
+                WebElement linkElement = siblingDivCloseButton.findElement(By.tagName("a"));
+
+                linkElement.click();
+                Assert.fail("Popup 'offlinePopup' should not be displayed. Equipment is offline.");
+            }
+        } catch (Exception e) {
+        	 waitForElement(By.className("loading"));
+             waitForElementToDisappear(By.className("loading"));
+             System.out.println("Loading completed.");
+        }
     }
     
     
@@ -281,37 +302,43 @@ public class DefaultTesting {
     }
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
     public void testFilterSalesPointByName() {
-        // Wait for the table body to be visible
-    	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
-    	   List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-        
-        // Assert that rows exist
+        // Locate the table body
+        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
-        // Extract text from rows into a list
-        List<String> originalList = rows.stream()
-                                        .map(row -> row.getText())
-                                        .collect(Collectors.toList());
-        //System.out.println("TEST testFilterSalesPointByName: " + originalList);
-        // Sort the original list programmatically
-        List<String> sortedList = originalList.stream()
-                                              .sorted()
-                                              .collect(Collectors.toList());
         
-        // Find the client column header and sort button
+        // Extract values from the "instituicao" column into the original list
+        List<String> originalList = rows.stream()
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText())
+            .collect(Collectors.toList());
+        
+        // Print the original list
+        System.out.println("TESTE testFilterSalesPointByName: Original list: " + originalList);
+        
+        // Create a sorted list from the original list
+        List<String> sortedList = new ArrayList<>(originalList);
+        sortedList.sort(String::compareTo);
+        
+        // Print the sorted list
+        System.out.println("TESTE testFilterSalesPointByName: Sorted list: " + sortedList);
+        
+        // Locate the column header and sort button
         WebElement clientColumn = driver.findElement(By.cssSelector("thead tr th[data-column-id='instituicao']"));
         WebElement sortButton = clientColumn.findElement(By.cssSelector("button.gridjs-sort"));
-
         
         // Click the sort button to sort the table in the UI
         sortButton.click();
         
+        // Wait for the table to update after sorting
+        waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody tr"));
+        
         // Retrieve the sorted rows from the UI
         List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
         List<String> uiSortedList = sortedRowsUI.stream()
-                                                .map(row -> row.getText())
-                                                .collect(Collectors.toList());
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText())
+            .collect(Collectors.toList());
         
-        // Assert that the programmatically sorted list matches the UI sorted list
+        // Compare the programmatically sorted list with the UI sorted list
         Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
     }
 
@@ -376,7 +403,7 @@ public class DefaultTesting {
     public void testLastInfoFirstMonitorableIsValidController() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
-        Assert.assertFalse(rows.isEmpty(), "Client equipment LIST not found!");
+        Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
         validateLastInfo(rows.get(0));
     }
 
@@ -384,7 +411,7 @@ public class DefaultTesting {
     public void testLastInfoFirstMonitorableIsValidAgata() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
-        Assert.assertFalse(rows.isEmpty(), "Client equipment LIST not found!");
+        Assert.assertFalse(rows.isEmpty(), "Client Pgdm not found!");
         validateLastInfo(rows.get(1));
     }
 
@@ -395,6 +422,12 @@ public class DefaultTesting {
         Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
         accessEquipment(rows.get(0), "carregarControlador('3006099150085066');");
     }
+    @Test(priority = 6)
+    public void testGoBackFromEquipment1() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("changeMain('monitoramento_agencia');");
+    }
+
 
     @Test(priority = 7, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidAgata"})
     public void testAcessEquipmentAgata() {
@@ -404,11 +437,6 @@ public class DefaultTesting {
         accessEquipment(rows.get(1), "carregarPgdm('000000', 78326);");
     }
 
-    @Test(priority = 7, dependsOnMethods = {"testAcessEquipmentController"})
-    public void testGoBackFromEquipment1() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("changeMain('monitoramento_agencia');");
-    }
 
     @Test(priority = 7, dependsOnMethods = {"testAcessEquipmentAgata"})
     public void testGoBackFromEquipment2() {

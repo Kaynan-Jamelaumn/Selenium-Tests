@@ -6,17 +6,19 @@
       <class name="DefaultTesting">
         <methods>
           <include name="testLastInfoFirstMonitorableIsValidAgata"/>
-          <include name="tearDown"/>
           <include name="testGoBackFromEquipment2"/>
+          <include name="testAcessEquipmentController"/>
           <include name="testValidatesNumberOfOS"/>
           <include name="testViewCare"/>
           <include name="setUp"/>
-          <include name="testAcessEquipmentAgata"/>
-          <include name="testGoBackFromSalesPointl"/>
-          <include name="testAssertNumberOfCLients"/>
           <include name="testFoundClientSalesPoint"/>
+          <include name="tearDown"/>
+          <include name="testLastInfoFirstMonitorableIsValidController"/>
+          <include name="testAcessEquipmentAgata"/>
+          <include name="testAssertNumberOfCLients"/>
           <include name="testFetchListAndClickFirstSalePoint"/>
           <include name="testLogin"/>
+          <include name="testGoBackFromSalesPoint"/>
         </methods>
       </class> <!-- DefaultTesting -->
     </classes>
