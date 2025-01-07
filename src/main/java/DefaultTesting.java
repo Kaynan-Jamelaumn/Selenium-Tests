@@ -197,7 +197,47 @@ public class DefaultTesting {
         }
     }
     
-    
+    public void testFilterSalesPoint(String columnId, String errorMessage) {
+        // Locate the table body
+        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
+        Assert.assertFalse(rows.isEmpty(), errorMessage);
+
+        // Extract values from the specified column into the original list
+        List<String> originalList = rows.stream()
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+            .collect(Collectors.toList());
+
+        // Print the original list
+        //System.out.println("TESTE testFilterSalesPoint: Original list: " + originalList);
+
+        // Create a sorted list from the original list
+        List<String> sortedList = new ArrayList<>(originalList);
+        sortedList.sort(String::compareTo);
+
+        // Print the sorted list
+        //System.out.println("TESTE testFilterSalesPoint: Sorted list: " + sortedList);
+
+        // Locate the column header and sort button
+        WebElement clientColumn = driver.findElement(By.cssSelector("thead tr th[data-column-id='" + columnId + "']"));
+        WebElement sortButton = clientColumn.findElement(By.cssSelector("button.gridjs-sort"));
+
+        // Click the sort button to sort the table in the UI
+        sortButton.click();
+
+        // Wait for the table to update after sorting
+        waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody tr"));
+
+        // Retrieve the sorted rows from the UI
+        List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
+        List<String> uiSortedList = sortedRowsUI.stream()
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+            .collect(Collectors.toList());
+
+        // Compare the programmatically sorted list with the UI sorted list
+        Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
+    }
+
     
     
     
@@ -300,47 +340,42 @@ public class DefaultTesting {
         numberOS = Integer.parseInt(firstRow.findElement(By.xpath(".//*[@data-column-id='total_ativo']")).getText());
         System.out.println("TEST testFoundClientSalesPoint: NÚMERO OS" + numberOS);
     }
+    
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testFilterSalesPointByName() {
-        // Locate the table body
-        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
-        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-        Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
-        
-        // Extract values from the "instituicao" column into the original list
-        List<String> originalList = rows.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText())
-            .collect(Collectors.toList());
-        
-        // Print the original list
-        System.out.println("TESTE testFilterSalesPointByName: Original list: " + originalList);
-        
-        // Create a sorted list from the original list
-        List<String> sortedList = new ArrayList<>(originalList);
-        sortedList.sort(String::compareTo);
-        
-        // Print the sorted list
-        System.out.println("TESTE testFilterSalesPointByName: Sorted list: " + sortedList);
-        
-        // Locate the column header and sort button
-        WebElement clientColumn = driver.findElement(By.cssSelector("thead tr th[data-column-id='instituicao']"));
-        WebElement sortButton = clientColumn.findElement(By.cssSelector("button.gridjs-sort"));
-        
-        // Click the sort button to sort the table in the UI
-        sortButton.click();
-        
-        // Wait for the table to update after sorting
-        waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody tr"));
-        
-        // Retrieve the sorted rows from the UI
-        List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
-        List<String> uiSortedList = sortedRowsUI.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText())
-            .collect(Collectors.toList());
-        
-        // Compare the programmatically sorted list with the UI sorted list
-        Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
+    public void testFilterSalesPointByID() {
+        testFilterSalesPoint("id", "Sales Point ID list is not found!");
     }
+
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByClient() {
+        testFilterSalesPoint("instituicao", "Client sales point list is not found!");
+    }
+
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointBySalesPoint() {
+        testFilterSalesPoint("agencia", "Sales Point Name list is not found!");
+    }
+    
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByLastMessage() {
+        testFilterSalesPoint("ultimo_monitoramento", "Last Message list is not found!");
+    }
+    
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByTotalEquipment() {
+        testFilterSalesPoint("total_equip", "Total equipment list is not found!");
+    }
+    
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByServiceOrder() {
+        testFilterSalesPoint("total_ativo", "Service Order list is not found!");
+    }
+    
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByOnlineEquipment() {
+        testFilterSalesPoint("info_qtd_online", "Online equipment list is not found!");
+    }
+    
 
 
     @Test(priority = 4, dependsOnMethods = {"testFoundClientSalesPoint"})
