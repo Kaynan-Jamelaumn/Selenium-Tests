@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EnterControllerTest extends BaseEquipmentTest {
 
-    @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterSalesPoint.testFetchListAndClickTheTestSalesPoint"})
+    @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidController() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));

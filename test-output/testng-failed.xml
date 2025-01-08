@@ -10,23 +10,23 @@
           <include name="testViewCare"/>
         </methods>
       </class> <!-- ViewCare.ViewCareTest -->
-      <class name="ViewCare.EnterSalesPoint">
+      <class name="ViewCare.EnterSalesPointTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
-      </class> <!-- ViewCare.EnterSalesPoint -->
-      <class name="ViewCare.EnterPGDM">
+      </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.EnterPGDMTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testGoBackFromSalesPoint"/>
+          <include name="testLastInfoFirstMonitorableIsValidPGDM"/>
           <include name="testAcessEquipmentPGDM"/>
           <include name="testGoBackFromEquipmentPGDM"/>
-          <include name="testLastInfoFirstMonitorableIsValidPGDM"/>
+          <include name="testGoBackFromSalesPoint"/>
         </methods>
-      </class> <!-- ViewCare.EnterPGDM -->
+      </class> <!-- ViewCare.EnterPGDMTest -->
       <class name="ViewCare.SalesPointTest">
         <methods>
           <include name="setUp"/>
