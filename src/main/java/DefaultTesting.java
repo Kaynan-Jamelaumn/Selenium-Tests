@@ -31,7 +31,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import java.net.HttpURLConnection;
 import java.net.URI;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 public class DefaultTesting {
 	
 
@@ -239,15 +239,7 @@ public class DefaultTesting {
     }
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @Test(priority = 1)
     public void testLogin() {
         driver.get(BASE_URL);
@@ -273,7 +265,7 @@ public class DefaultTesting {
     }
 
     
-    @Test(priority = 3, dependsOnMethods = {"testViewCare"})
+    @Test(priority = 2, dependsOnMethods = {"testViewCare"})
     public void testOnlineEquipements() {
         try {
             // Wait for the Main Element
@@ -323,7 +315,7 @@ public class DefaultTesting {
         }
     }
 
-    @Test(priority = 3, dependsOnMethods = {"testViewCare"})
+    @Test(priority = 2, dependsOnMethods = {"testViewCare"})
     public void testFoundClientSalesPoint(){
     	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
         
@@ -346,10 +338,6 @@ public class DefaultTesting {
         testFilterSalesPoint("id", "Sales Point ID list is not found!");
     }
 
-    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testFilterSalesPointByClient() {
-        testFilterSalesPoint("instituicao", "Client sales point list is not found!");
-    }
 
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
     public void testFilterSalesPointBySalesPoint() {
@@ -376,9 +364,13 @@ public class DefaultTesting {
         testFilterSalesPoint("info_qtd_online", "Online equipment list is not found!");
     }
     
+    @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFilterSalesPointByClient() {
+        testFilterSalesPoint("instituicao", "Client sales point list is not found!");
+    }
 
 
-    @Test(priority = 4, dependsOnMethods = {"testFoundClientSalesPoint"})
+    @Test(priority = 5, dependsOnMethods = {"testFoundClientSalesPoint"})
     public void testAssertNumberOfCLients(){
     	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
     	WebElement pontosDeVendaQt = waitForElement(By.id("pontosDeVendaQtd"));
@@ -390,25 +382,53 @@ public class DefaultTesting {
 
     }
 
-
-    @Test(priority = 4, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testFetchListAndClickFirstSalePoint(){
+    @Test(priority = 5, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testAssertNumberOfShowedResults(){
     	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+    	List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
+    	Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
+    	
+    	WebElement showedResults = driver.findElement(By.cssSelector("#listagem_dashboard_view_care .gridjs-footer .gridjs-summary"));
+    	List<WebElement> boldElements = showedResults.findElements(By.tagName("b"));
+    	Assert.assertTrue(boldElements.size() >= 3, "Not Enough Bold Elements");
+    	 
+    	String  numberOfShowedResultsString =  boldElements.get(2).getText().trim();
+    	int numberOfShowedResults = Integer.parseInt(numberOfShowedResultsString);
+        Assert.assertEquals(numberOfShowedResults, rows.size(), "Number of Shown Sales Points And Number of Sales Points Are Different");
+
+    }
+    
+
+
+    @Test(priority = 5, dependsOnMethods = {"testFoundClientSalesPoint"})
+    public void testFetchListAndClickTheTestSalesPoint() {
+        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
         
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
-
-        WebElement firstRow = rows.get(0);
-        WebElement button = firstRow.findElement(By.className("simtro-text-button"));
-      //  Assert.assertFalse(buttons.isEmpty(), "The 'simtro-text-button' was not found in the first row!");
-     //   WebElement numberOS = firstRow.findElement(By.id("simtro-text-button"));
+        
+        // Filtra as linhas com a instituição "PV MONITORAMENTO (NÃO ALTERAR)"
+        WebElement targetRow = null;
+        for (WebElement row : rows) {
+            String instituicao = row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText();
+            if ("PV MONITORAMENTO (NÃO ALTERAR)".equals(instituicao)) {
+                targetRow = row;
+                break;
+            }
+        }
+        
+        // Verifica se encontrou a linha com a instituição específica
+        Assert.assertNotNull(targetRow, "Sales point with Client 'PV MONITORAMENTO (NÃO ALTERAR)' not found!");
+        
+        // Encontra o botão na linha selecionada e clica
+        WebElement button = targetRow.findElement(By.className("simtro-text-button"));
+        Assert.assertNotNull(button, "The 'simtro-text-button' was not found in the target row!");
         
         button.click();
-        System.out.println("TEST testFetchListAndClickFirstSalePoint: Clicked the 'simtro-text-button' in the first row.");
-        
+        System.out.println("TEST testFetchListAndClickFirstSalePoint: Clicked the 'simtro-text-button' in the row with 'PV MONITORAMENTO (NÃO ALTERAR)'.");
     }
 
-    @Test(priority = 5, dependsOnMethods = {"testFetchListAndClickFirstSalePoint"})
+    @Test(priority = 6, dependsOnMethods = {"testFetchListAndClickTheTestSalesPoint"})
     public void testValidateNameSalesPoint() {
     	String nameAgency = waitForElement(By.id("nome_agencia")).getText();
     	String nameSalesPoint = waitForElement(By.id("nome_agencia")).getText();
@@ -419,7 +439,7 @@ public class DefaultTesting {
     }
 
     
-    @Test(priority = 5, dependsOnMethods = {"testFetchListAndClickFirstSalePoint"})
+    @Test(priority = 6, dependsOnMethods = {"testFetchListAndClickTheTestSalesPoint"})
     public void testValidatesNumberOfOS() {
     	WebElement numberOSSeted = waitForElement(By.cssSelector(".simtroDivHeaderTitles div:nth-of-type(2) small:nth-of-type(2)"));
     	int number;
@@ -434,7 +454,7 @@ public class DefaultTesting {
     }
 
     
-    @Test(priority = 5, dependsOnMethods = {"testFetchListAndClickFirstSalePoint"})
+    @Test(priority = 6, dependsOnMethods = {"testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidController() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
@@ -442,7 +462,7 @@ public class DefaultTesting {
         validateLastInfo(rows.get(0));
     }
 
-    @Test(priority = 5, dependsOnMethods = {"testFetchListAndClickFirstSalePoint"})
+    @Test(priority = 6, dependsOnMethods = {"testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidAgata() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
@@ -450,21 +470,21 @@ public class DefaultTesting {
         validateLastInfo(rows.get(1));
     }
 
-    @Test(priority = 6, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidController"})
+    @Test(priority = 7, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidController"})
     public void testAcessEquipmentController() {
         WebElement tableEquipment = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipment.findElements(By.cssSelector(".card.card-stats"));
         Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
         accessEquipment(rows.get(0), "carregarControlador('3006099150085066');");
     }
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void testGoBackFromEquipment1() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("changeMain('monitoramento_agencia');");
     }
 
 
-    @Test(priority = 7, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidAgata"})
+    @Test(priority = 8, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidAgata"})
     public void testAcessEquipmentAgata() {
         WebElement tableEquipment = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipment.findElements(By.cssSelector(".card.card-stats"));
@@ -473,12 +493,12 @@ public class DefaultTesting {
     }
 
 
-    @Test(priority = 7, dependsOnMethods = {"testAcessEquipmentAgata"})
+    @Test(priority = 8, dependsOnMethods = {"testAcessEquipmentAgata"})
     public void testGoBackFromEquipment2() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("changeMain('monitoramento_agencia');");
     }
-    @Test(priority = 8, dependsOnMethods = {"testGoBackFromEquipment2"})
+    @Test(priority = 9, dependsOnMethods = {"testGoBackFromEquipment2"})
     public void testGoBackFromSalesPoint()  {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 

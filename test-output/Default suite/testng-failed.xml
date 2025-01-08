@@ -11,12 +11,12 @@
           <include name="testValidatesNumberOfOS"/>
           <include name="testViewCare"/>
           <include name="setUp"/>
+          <include name="testFetchListAndClickTheTestSalesPoint"/>
           <include name="testFoundClientSalesPoint"/>
           <include name="tearDown"/>
           <include name="testLastInfoFirstMonitorableIsValidController"/>
           <include name="testAcessEquipmentAgata"/>
           <include name="testAssertNumberOfCLients"/>
-          <include name="testFetchListAndClickFirstSalePoint"/>
           <include name="testLogin"/>
           <include name="testGoBackFromSalesPoint"/>
         </methods>
