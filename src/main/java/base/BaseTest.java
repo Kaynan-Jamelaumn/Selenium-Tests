@@ -39,13 +39,20 @@ public class BaseTest {
 
     protected static WebDriver driver;
     protected static final String BASE_URL = "https://qas.simtro.com.br/index.php";
-    protected static final Duration TIMEOUT = Duration.ofSeconds(10);
-    protected int numberOS;
+    protected  Duration TIMEOUT = Duration.ofSeconds(10);
+    protected static int numberOS;
     
     protected WebElement waitForElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+    
+    protected List<WebElement> waitForElements(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+    
     protected void waitForElementToBeClickable(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
         wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -150,4 +157,21 @@ public class BaseTest {
         }
         driver.switchTo().window(mainWindow);
     }
+    
+    protected void waitLoading() {
+        waitForElement(By.className("loadingClass"));
+        waitForElementToDisappear(By.className("loadingClass"));
+    	
+    }
+    protected void tryWaitLoading() {
+        try {
+            waitForElement(By.className("loadingClass"));
+            waitForElementToDisappear(By.className("loadingClass"));
+        } catch (Exception e) {
+            // Handle the exception or log it
+           // e.printStackTrace();
+        }
+    }
+    
+    
 }

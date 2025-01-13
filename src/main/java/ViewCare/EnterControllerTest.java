@@ -1,7 +1,6 @@
 package ViewCare;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,6 +11,9 @@ public class EnterControllerTest extends BaseEquipmentTest {
 
     @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidController() {
+    	System.out.println();
+    	System.out.println("---------------CONTROLLER CARD---------------");
+     	System.out.println();
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
         List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
         Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
@@ -26,9 +28,5 @@ public class EnterControllerTest extends BaseEquipmentTest {
         accessEquipment(rows.get(0), "carregarControlador('3006099150085066');");
     }
 
-    @Test(priority = 3)
-    public void testGoBackFromController() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("changeMain('monitoramento_agencia');");
-    }
+
 }

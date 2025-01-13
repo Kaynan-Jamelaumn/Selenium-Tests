@@ -8,6 +8,7 @@
             <class name="ViewCare.SalesPointTest"/>
             <class name="ViewCare.EnterSalesPointTest"/>
              <class name="ViewCare.EnterControllerTest"/>
+              <class name="ViewCare.ValidateControllerTest"/>
             <class name="ViewCare.EnterPGDMTest"/>
         </classes>
     </test>

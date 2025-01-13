@@ -18,6 +18,9 @@ public class EnterSalesPointTest extends BaseTest {
 
     @Test(priority = 1, dependsOnMethods = {"ViewCare.SalesPointTest.testFoundClientSalesPoint"})
     public void testFetchListAndClickTheTestSalesPoint() {
+    	System.out.println();
+      	 System.out.println("---------------SALES POINTS---------------");
+      	System.out.println();
         WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
         
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
@@ -41,17 +44,18 @@ public class EnterSalesPointTest extends BaseTest {
         Assert.assertNotNull(button, "The 'simtro-text-button' was not found in the target row!");
         
         button.click();
-        System.out.println("TEST testFetchListAndClickFirstSalePoint: Clicked the 'simtro-text-button' in the row with 'PV MONITORAMENTO (NÃO ALTERAR)'.");
+        System.out.println("TEST testFetchListAndClickTheTestSalesPoint: Clicked the 'simtro-text-button' in the row with 'PV MONITORAMENTO (NÃO ALTERAR)'.");
     }
 
     @Test(priority = 2, dependsOnMethods = {"testFetchListAndClickTheTestSalesPoint"})
     public void testValidateNameSalesPoint() {
     	String nameAgency = waitForElement(By.id("nome_agencia")).getText();
-    	String nameSalesPoint = waitForElement(By.id("nome_agencia")).getText();
+    	String nameSalesPoint = waitForElement(By.id("nome_agencia2")).getText();
        	String responsableAgency = waitForElement(By.id("dados_responsavel_agencia")).getText();
     	Assert.assertNotNull(nameAgency);
     	Assert.assertNotNull(nameSalesPoint);
       	Assert.assertNotNull(responsableAgency);
+        System.out.println("TEST testValidateNameSalesPoint: passed");
     }
 
     
@@ -65,8 +69,8 @@ public class EnterSalesPointTest extends BaseTest {
     	} catch (NumberFormatException e) {
     	    number = 0; 
     	}
-    	System.out.println("TEST testValidatesNumberOfOS: " + number + "OUTRO NÚMERO" + numberOS);
     	Assert.assertEquals(number, numberOS, "OS Number Does Not Match" );   
+        System.out.println("TEST testValidatesNumberOfOS: passed");
     }
 
 

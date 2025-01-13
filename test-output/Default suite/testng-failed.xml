@@ -3,24 +3,37 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DefaultTesting">
+      <class name="ViewCare.SalesPointTest">
         <methods>
-          <include name="testLastInfoFirstMonitorableIsValidAgata"/>
-          <include name="testGoBackFromEquipment2"/>
-          <include name="testAcessEquipmentController"/>
-          <include name="testValidatesNumberOfOS"/>
-          <include name="testViewCare"/>
           <include name="setUp"/>
-          <include name="testFetchListAndClickTheTestSalesPoint"/>
-          <include name="testFoundClientSalesPoint"/>
           <include name="tearDown"/>
-          <include name="testLastInfoFirstMonitorableIsValidController"/>
-          <include name="testAcessEquipmentAgata"/>
           <include name="testAssertNumberOfCLients"/>
-          <include name="testLogin"/>
-          <include name="testGoBackFromSalesPoint"/>
+          <include name="testFoundClientSalesPoint"/>
         </methods>
-      </class> <!-- DefaultTesting -->
+      </class> <!-- ViewCare.SalesPointTest -->
+      <class name="ViewCare.EnterSalesPointTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testValidatesNumberOfOS"/>
+          <include name="testFetchListAndClickTheTestSalesPoint"/>
+          <include name="testValidateNameSalesPoint"/>
+        </methods>
+      </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.ViewCareTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testViewCare"/>
+        </methods>
+      </class> <!-- ViewCare.ViewCareTest -->
+      <class name="base.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testLogin"/>
+        </methods>
+      </class> <!-- base.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

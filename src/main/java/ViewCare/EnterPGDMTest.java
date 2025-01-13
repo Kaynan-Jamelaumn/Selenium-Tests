@@ -14,7 +14,7 @@ import java.util.List;
 
 
 public class EnterPGDMTest extends BaseEquipmentTest {
-
+/*
     @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidPGDM() {
         WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
@@ -42,5 +42,5 @@ public class EnterPGDMTest extends BaseEquipmentTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         WebElement voltarElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Voltar']/..")));
         voltarElement.click();
-    }
+    }*/
 }

@@ -14,26 +14,16 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="testValidatesNumberOfOS"/>
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.EnterSalesPointTest -->
-      <class name="ViewCare.EnterPGDMTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testLastInfoFirstMonitorableIsValidPGDM"/>
-          <include name="testAcessEquipmentPGDM"/>
-          <include name="testGoBackFromEquipmentPGDM"/>
-          <include name="testGoBackFromSalesPoint"/>
-        </methods>
-      </class> <!-- ViewCare.EnterPGDMTest -->
       <class name="ViewCare.SalesPointTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="testAssertNumberOfCLients"/>
           <include name="testFoundClientSalesPoint"/>
-          <include name="testOnlineEquipements"/>
         </methods>
       </class> <!-- ViewCare.SalesPointTest -->
       <class name="base.LoginTest">
