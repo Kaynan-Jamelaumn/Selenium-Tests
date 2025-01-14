@@ -6,8 +6,9 @@ import org.testng.ITestResult;
 public class CustomTestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("Test failed: " + result.getName());
-        System.out.println("Reason: " + result.getThrowable());
+    	System.err.println("Test failed: " + result.getName());
+    	System.err.println("Reason: " + result.getThrowable());
+        
     }
     
     @Override

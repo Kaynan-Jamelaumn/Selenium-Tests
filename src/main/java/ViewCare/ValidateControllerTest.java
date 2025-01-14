@@ -69,8 +69,8 @@ public class ValidateControllerTest extends BaseTest {
         }
     }
 
-    @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
-    public void validateNumberOfUsers() {
+    @Test(priority = 2, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
+    public void testValidateNumberOfUsers() {
     	System.out.println();
     	System.out.println("---------------CONTROLLER INFO---------------");
     	System.out.println();
@@ -84,8 +84,8 @@ public class ValidateControllerTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2, dependsOnMethods = {"validateNumberOfUsers"})
-    public void validateNumberOfBiometry(){
+    @Test(priority = 2, dependsOnMethods = {"testValidateNumberOfUsers"})
+    public void testValidateNumberOfBiometry(){
         validateNumberOfElements(
             "#detalhamento_controlador #digitaisCadastradas",
             "#detalhamento_controlador .cardSimtroProject:nth-of-type(2) .simtTitle",
@@ -97,8 +97,8 @@ public class ValidateControllerTest extends BaseTest {
     }
 
 
-    @Test(priority = 3, dependsOnMethods = {"validateNumberOfBiometry"})
-    public void validateNumberOfTime() {
+    @Test(priority = 3, dependsOnMethods = {"testValidateNumberOfBiometry"})
+    public void testValidateNumberOfTime() {
         validateNumberOfElements(
             "#detalhamento_controlador #horariosCadastrados",
             "#detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle",
@@ -108,8 +108,8 @@ public class ValidateControllerTest extends BaseTest {
             false
         );
     }
-    @Test(priority = 4, dependsOnMethods = {"validateNumberOfBiometry"})
-    public void validateNumberOfAcess() {
+    @Test(priority = 4, dependsOnMethods = {"testValidateNumberOfBiometry"})
+    public void testValidateNumberOfAcess() {
         final String rowsSelector = "#listagem_acessos_controlador #table_acessos_controlador";
         
         validateNumberOfElements(
@@ -132,7 +132,45 @@ public class ValidateControllerTest extends BaseTest {
         // Test filter by time
         filterByTime("7", rowsSelector);
         System.out.println("TEST validateNumberOfAcess: passed by filtering access by time");
+        
+
     }
+    @Test(priority = 5, dependsOnMethods = {"testValidateNumberOfAcess"})
+    public void testExportAccess() {
+        boolean didItStart = verifyDownloadStarted( By.cssSelector("#acessos_equipamento div:nth-of-type(6) button:nth-of-type(1)"));
+        Assert.assertTrue(didItStart, "Test ExportAccess: Failed, download did not start");
+        WebElement exportCloseButton = driver.findElement(By.cssSelector("#myModal .simtro-text-button-alternative"));
+        exportCloseButton.click();
+        System.out.println("TEST testExportAccess: passed");
+    }
+
+    
+    @Test(priority = 5, dependsOnMethods = {"testExportAccess"})
+    public void testTryRemoteAccess() {
+        String controllerLocation = driver.findElement(By.id("localizacaoControlador")).getText();
+        WebElement controllerAccessButtonCard = driver.findElement(By.id("controladorGrid"));
+        WebElement  controllerAccessButton = controllerAccessButtonCard.findElement(By.tagName("div")).findElement(By.tagName("div")).findElement(By.tagName("a"));
+        if (controllerLocation.equals("EXTERNO"))
+        {
+        	driver.findElement(By.id("abertura_remota")).click();
+        	WebElement motiveInput = waitForElement(By.id("acionamento_remoto_motivo"));
+        	motiveInput.sendKeys("teste");
+        	WebElement button = driver.findElement(By.cssSelector("#myModalAberturaRemota .modal-footer .simtro-text-button-alternative"));
+        	button.click();
+            waitForElement(By.className("loading"));
+            waitForElementToDisappear(By.className("loading"));
+            WebElement info =  waitForElement(By.id("info_mensagem"));
+            Assert.assertEquals(info.getText().trim(), "Controlador aberto com sucesso.", "Error: Controller did not properly remotely open");
+            WebElement closeButton = waitForElement(By.cssSelector("#myModal .modal-dialog .modal-content .modal-footer .simtro-text-button-alternative"));
+            closeButton.click();
+        }	
+        else {
+        		Assert.assertNull(controllerAccessButton, "Should not be able to remotely access this type of controller");
+        	}
+        System.out.println("TEST testTryRemoteAccess: passed");
+        
+    }
+    
 
     private void filterByDate(String startDate, String endDate, String rowsSelector) {
         setDateFilter(startDate, endDate);

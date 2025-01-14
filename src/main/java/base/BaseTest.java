@@ -41,6 +41,7 @@ public class BaseTest {
     protected static final String BASE_URL = "https://qas.simtro.com.br/index.php";
     protected  Duration TIMEOUT = Duration.ofSeconds(10);
     protected static int numberOS;
+    protected static final String DOWNLOAD_DIR = "C:\\Users\\enricky.hipolito\\Downloads\\";
     
     protected WebElement waitForElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
@@ -125,6 +126,11 @@ public class BaseTest {
             options.setCapability("webSocketUrl", true); // enables bidi
 
             
+            // Set up the download directory
+            options.addPreference("browser.download.folderList", 2);
+            options.addPreference("browser.download.dir", DOWNLOAD_DIR);
+            options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
+            
             driver = new FirefoxDriver(options);
             driver.manage().window().maximize();
             
@@ -171,6 +177,35 @@ public class BaseTest {
             // Handle the exception or log it
            // e.printStackTrace();
         }
+    }
+    
+    protected boolean verifyDownloadStarted(By downloadButtonLocator) {
+        File downloadDir = new File(DOWNLOAD_DIR);
+        long initialFileCount = downloadDir.listFiles().length;
+
+        // Click the download button
+        WebElement downloadButton = waitForElement(downloadButtonLocator);
+        downloadButton.click();
+
+        // Wait for a new file to appear in the download directory
+        long timeout = 30; // seconds
+        long startTime = System.currentTimeMillis();
+
+        while (System.currentTimeMillis() - startTime < timeout * 1000) {
+            long currentFileCount = downloadDir.listFiles().length;
+            if (currentFileCount > initialFileCount) {
+                System.out.println("Download has started");
+                return true;
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.err.println("Download did not start within the timeout period");
+        return false;
     }
     
     

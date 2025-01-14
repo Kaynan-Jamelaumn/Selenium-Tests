@@ -11,6 +11,16 @@
           <include name="testFoundClientSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.SalesPointTest -->
+      <class name="ViewCare.ValidateControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testExportAccess"/>
+          <include name="testValidateNumberOfAcess"/>
+          <include name="testValidateNumberOfUsers"/>
+          <include name="testValidateNumberOfBiometry"/>
+        </methods>
+      </class> <!-- ViewCare.ValidateControllerTest -->
       <class name="ViewCare.EnterSalesPointTest">
         <methods>
           <include name="setUp"/>
@@ -27,6 +37,14 @@
           <include name="testViewCare"/>
         </methods>
       </class> <!-- ViewCare.ViewCareTest -->
+      <class name="ViewCare.EnterControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testAcessEquipmentController"/>
+          <include name="testLastInfoFirstMonitorableIsValidController"/>
+        </methods>
+      </class> <!-- ViewCare.EnterControllerTest -->
       <class name="base.LoginTest">
         <methods>
           <include name="setUp"/>

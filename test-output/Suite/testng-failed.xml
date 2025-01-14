@@ -18,6 +18,18 @@
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.ValidateControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testExportAccess"/>
+          <include name="testValidateNumberOfAcess"/>
+          <include name="testValidateNumberOfTime"/>
+          <include name="testValidateNumberOfUsers"/>
+          <include name="testTryRemoteAccess"/>
+          <include name="testValidateNumberOfBiometry"/>
+        </methods>
+      </class> <!-- ViewCare.ValidateControllerTest -->
       <class name="ViewCare.SalesPointTest">
         <methods>
           <include name="setUp"/>
@@ -26,6 +38,14 @@
           <include name="testFoundClientSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.SalesPointTest -->
+      <class name="ViewCare.EnterControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testAcessEquipmentController"/>
+          <include name="testLastInfoFirstMonitorableIsValidController"/>
+        </methods>
+      </class> <!-- ViewCare.EnterControllerTest -->
       <class name="base.LoginTest">
         <methods>
           <include name="setUp"/>
