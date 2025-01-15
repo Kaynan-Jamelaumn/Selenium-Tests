@@ -17,8 +17,6 @@
           <include name="tearDown"/>
           <include name="testExportAccess"/>
           <include name="testValidateNumberOfAcess"/>
-          <include name="testValidateNumberOfUsers"/>
-          <include name="testValidateNumberOfBiometry"/>
         </methods>
       </class> <!-- ViewCare.ValidateControllerTest -->
       <class name="ViewCare.EnterSalesPointTest">

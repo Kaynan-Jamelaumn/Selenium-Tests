@@ -16,33 +16,7 @@ import java.util.stream.Collectors;
 @Listeners(base.CustomTestListener.class)
 public class SalesPointTest extends BaseTest {
 
-    private void testFilterSalesPoint(String columnId, String errorMessage, String testName) {
-        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
-        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-        Assert.assertFalse(rows.isEmpty(), errorMessage);
 
-        List<String> originalList = rows.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
-            .collect(Collectors.toList());
-
-        List<String> sortedList = new ArrayList<>(originalList);
-        sortedList.sort(String::compareTo);
-
-        WebElement clientColumn = driver.findElement(By.cssSelector("thead tr th[data-column-id='" + columnId + "']"));
-        WebElement sortButton = clientColumn.findElement(By.cssSelector("button.gridjs-sort"));
-
-        sortButton.click();
-
-        waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody tr"));
-
-        List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
-        List<String> uiSortedList = sortedRowsUI.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
-            .collect(Collectors.toList());
-
-        Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
-        System.out.println("TEST " + testName+ ": passed");
-    }
     
     @Test(priority = 1, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
     public void testOnlineEquipements() {
@@ -198,6 +172,34 @@ public class SalesPointTest extends BaseTest {
         Assert.assertEquals(numberOfShowedResults, rows.size(), "Number of Shown Sales Points And Number of Sales Points Are Different");
         System.out.println("TEST testAssertNumberOfShowedResults: Number of Sales points and  number of Sales Points Match");
 
+    }
+    
+    private void testFilterSalesPoint(String columnId, String errorMessage, String testName) {
+        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
+        Assert.assertFalse(rows.isEmpty(), errorMessage);
+
+        List<String> originalList = rows.stream()
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+            .collect(Collectors.toList());
+
+        List<String> sortedList = new ArrayList<>(originalList);
+        sortedList.sort(String::compareTo);
+
+        WebElement clientColumn = driver.findElement(By.cssSelector("thead tr th[data-column-id='" + columnId + "']"));
+        WebElement sortButton = clientColumn.findElement(By.cssSelector("button.gridjs-sort"));
+
+        sortButton.click();
+
+        waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody tr"));
+
+        List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
+        List<String> uiSortedList = sortedRowsUI.stream()
+            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+            .collect(Collectors.toList());
+
+        Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
+        System.out.println("TEST " + testName+ ": passed");
     }
     
 

@@ -17,7 +17,7 @@ import base.BaseTest;
 import base.CustomTestListener;
 
 @Listeners(CustomTestListener.class)
-public class ValidateControllerTest extends BaseTest {
+public class ValidateControllerInformationTest extends BaseTest {
     protected Duration TIMEOUT = Duration.ofSeconds(120);
     private int numberOfBiometry = 0;
     
@@ -27,47 +27,6 @@ public class ValidateControllerTest extends BaseTest {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
-    protected void validateNumberOfElements(String numberOfElementsSelector, String buttonSelector, String rowsSelector, String loadingClass, String elementDescription, boolean directButton) {
-        String numberOfElementsText = waitForElement(By.cssSelector(numberOfElementsSelector)).getText();
-        int numberOfElements = Integer.parseInt(numberOfElementsText);
-        
-        if (directButton == true) {
-        	((JavascriptExecutor)  driver).executeScript("carregarDigitais()");
-        }
-        else {
-        	
-        WebElement button = waitForElement(By.cssSelector(buttonSelector));
-        button.click();
-        }
-
-        waitForElement(By.className(loadingClass));
-        waitForElementToDisappear(By.className(loadingClass));
-
-       // System.out.println(buttonSelector + " Loading completed.");
-        WebElement element = driver.findElement(By.cssSelector(rowsSelector));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
-
-        List<WebElement> rows = waitForElements(By.cssSelector(rowsSelector + " tr"));
-        Assert.assertFalse(rows.isEmpty(), elementDescription + " List Not Found");
-
-        if (elementDescription.equals("Users")) {
-            for (WebElement row : rows) {
-                List<WebElement> cells = row.findElements(By.tagName("td"));
-                
-                if (cells.size() > 9 && "Sim".equals(cells.get(9).getText())) {
-                    numberOfBiometry++;
-                }
-            }
-            
-        }
-        if (elementDescription.equals("Biometry")) { 
-        	Assert.assertEquals(numberOfBiometry, numberOfElements, "Number of Users with Biometry and the actual list of " + elementDescription + " are different");
-    	}
-        else {
-        Assert.assertEquals(rows.size(), numberOfElements, "Number of " + elementDescription + " shown and the actual list of " + elementDescription + " are different");
-        System.out.println("TEST " + elementDescription + ": passed numberOf " + elementDescription + " " + numberOfElements);
-        }
-    }
 
     @Test(priority = 2, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
     public void testValidateNumberOfUsers() {
@@ -97,7 +56,7 @@ public class ValidateControllerTest extends BaseTest {
     }
 
 
-    @Test(priority = 3, dependsOnMethods = {"testValidateNumberOfBiometry"})
+    @Test(priority = 3, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
     public void testValidateNumberOfTime() {
         validateNumberOfElements(
             "#detalhamento_controlador #horariosCadastrados",
@@ -108,7 +67,7 @@ public class ValidateControllerTest extends BaseTest {
             false
         );
     }
-    @Test(priority = 4, dependsOnMethods = {"testValidateNumberOfBiometry"})
+    @Test(priority = 4, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
     public void testValidateNumberOfAcess() {
         final String rowsSelector = "#listagem_acessos_controlador #table_acessos_controlador";
         
@@ -138,38 +97,15 @@ public class ValidateControllerTest extends BaseTest {
     @Test(priority = 5, dependsOnMethods = {"testValidateNumberOfAcess"})
     public void testExportAccess() {
         boolean didItStart = verifyDownloadStarted( By.cssSelector("#acessos_equipamento div:nth-of-type(6) button:nth-of-type(1)"));
-        Assert.assertTrue(didItStart, "Test ExportAccess: Failed, download did not start");
+        
         WebElement exportCloseButton = driver.findElement(By.cssSelector("#myModal .simtro-text-button-alternative"));
         exportCloseButton.click();
+        
+        Assert.assertTrue(didItStart, "Test ExportAccess: Failed, download did not start");
         System.out.println("TEST testExportAccess: passed");
     }
 
-    
-    @Test(priority = 5, dependsOnMethods = {"testExportAccess"})
-    public void testTryRemoteAccess() {
-        String controllerLocation = driver.findElement(By.id("localizacaoControlador")).getText();
-        WebElement controllerAccessButtonCard = driver.findElement(By.id("controladorGrid"));
-        WebElement  controllerAccessButton = controllerAccessButtonCard.findElement(By.tagName("div")).findElement(By.tagName("div")).findElement(By.tagName("a"));
-        if (controllerLocation.equals("EXTERNO"))
-        {
-        	driver.findElement(By.id("abertura_remota")).click();
-        	WebElement motiveInput = waitForElement(By.id("acionamento_remoto_motivo"));
-        	motiveInput.sendKeys("teste");
-        	WebElement button = driver.findElement(By.cssSelector("#myModalAberturaRemota .modal-footer .simtro-text-button-alternative"));
-        	button.click();
-            waitForElement(By.className("loading"));
-            waitForElementToDisappear(By.className("loading"));
-            WebElement info =  waitForElement(By.id("info_mensagem"));
-            Assert.assertEquals(info.getText().trim(), "Controlador aberto com sucesso.", "Error: Controller did not properly remotely open");
-            WebElement closeButton = waitForElement(By.cssSelector("#myModal .modal-dialog .modal-content .modal-footer .simtro-text-button-alternative"));
-            closeButton.click();
-        }	
-        else {
-        		Assert.assertNull(controllerAccessButton, "Should not be able to remotely access this type of controller");
-        	}
-        System.out.println("TEST testTryRemoteAccess: passed");
-        
-    }
+
     
 
     private void filterByDate(String startDate, String endDate, String rowsSelector) {
@@ -226,6 +162,48 @@ public class ValidateControllerTest extends BaseTest {
             WebElement td = rows.get(0).findElement(By.cssSelector("td"));
             String tdText = td.getText();
             Assert.assertTrue(tdText.contains("Não há nenhum acesso registrado"), "Failed UnSuccesfully");
+        }
+    }
+    
+    protected void validateNumberOfElements(String numberOfElementsSelector, String buttonSelector, String rowsSelector, String loadingClass, String elementDescription, boolean directButton) {
+        String numberOfElementsText = waitForElement(By.cssSelector(numberOfElementsSelector)).getText();
+        int numberOfElements = Integer.parseInt(numberOfElementsText);
+        
+        if (directButton == true) {
+        	((JavascriptExecutor)  driver).executeScript("carregarDigitais()");
+        }
+        else {
+        	
+        WebElement button = waitForElement(By.cssSelector(buttonSelector));
+        button.click();
+        }
+
+        waitForElement(By.className(loadingClass));
+        waitForElementToDisappear(By.className(loadingClass));
+
+       // System.out.println(buttonSelector + " Loading completed.");
+        WebElement element = driver.findElement(By.cssSelector(rowsSelector));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+
+        List<WebElement> rows = waitForElements(By.cssSelector(rowsSelector + " tr"));
+        Assert.assertFalse(rows.isEmpty(), elementDescription + " List Not Found");
+
+        if (elementDescription.equals("Users")) {
+            for (WebElement row : rows) {
+                List<WebElement> cells = row.findElements(By.tagName("td"));
+                
+                if (cells.size() > 9 && "Sim".equals(cells.get(9).getText())) {
+                    numberOfBiometry++;
+                }
+            }
+            
+        }
+        if (elementDescription.equals("Biometry")) { 
+        	Assert.assertEquals(numberOfBiometry, numberOfElements, "Number of Users with Biometry and the actual list of " + elementDescription + " are different");
+    	}
+        else {
+        Assert.assertEquals(rows.size(), numberOfElements, "Number of " + elementDescription + " shown and the actual list of " + elementDescription + " are different");
+        System.out.println("TEST " + elementDescription + ": passed numberOf " + elementDescription + " " + numberOfElements);
         }
     }
 }
