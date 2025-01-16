@@ -70,8 +70,9 @@ public class BaseEquipmentTest extends BaseTest {
                 Assert.fail("Popup 'offlinePopup' should not be displayed. Equipment is offline.");
             }
         } catch (Exception e) {
-            waitForElement(By.className("loading"));
-            waitForElementToDisappear(By.className("loading"));
+        	tryWaitLoading();
+            //waitForElement(By.className("loading"));
+            //waitForElementToDisappear(By.className("loading"));
             System.out.println("Loading completed.");
         }
         }

@@ -3,37 +3,6 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AllTests(failed)">
     <classes>
-      <class name="ViewCare.ViewCareTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testViewCare"/>
-        </methods>
-      </class> <!-- ViewCare.ViewCareTest -->
-      <class name="ViewCare.ValidateControllerInformationTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testValidateNumberOfAcess"/>
-          <include name="testExportAccess"/>
-        </methods>
-      </class> <!-- ViewCare.ValidateControllerInformationTest -->
-      <class name="ViewCare.EnterSalesPointTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testValidatesNumberOfOS"/>
-          <include name="testFetchListAndClickTheTestSalesPoint"/>
-        </methods>
-      </class> <!-- ViewCare.EnterSalesPointTest -->
-      <class name="ViewCare.SalesPointTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testAssertNumberOfCLients"/>
-          <include name="testFoundClientSalesPoint"/>
-        </methods>
-      </class> <!-- ViewCare.SalesPointTest -->
       <class name="ViewCare.EnterControllerTest">
         <methods>
           <include name="setUp"/>
@@ -49,6 +18,37 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- base.LoginTest -->
+      <class name="ViewCare.SalesPointTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testAssertNumberOfCLients"/>
+          <include name="testFoundClientSalesPoint"/>
+        </methods>
+      </class> <!-- ViewCare.SalesPointTest -->
+      <class name="ViewCare.EnterSalesPointTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testValidatesNumberOfOS"/>
+          <include name="testFetchListAndClickTheTestSalesPoint"/>
+        </methods>
+      </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.ValidateControllerInformationTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testValidateNumberOfAcess"/>
+          <include name="testExportAccess"/>
+        </methods>
+      </class> <!-- ViewCare.ValidateControllerInformationTest -->
+      <class name="ViewCare.ViewCareTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testViewCare"/>
+        </methods>
+      </class> <!-- ViewCare.ViewCareTest -->
     </classes>
   </test> <!-- AllTests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

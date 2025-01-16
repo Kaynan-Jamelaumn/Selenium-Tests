@@ -1,5 +1,6 @@
 package base;
 import java.time.Duration;
+
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,10 @@ import org.apache.commons.io.FileUtils;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
 	
 
@@ -121,8 +126,9 @@ public class BaseTest {
     protected void setUp() throws IOException {
         // Initialize WebDriver (e.g., FirefoxDriver)
         if (driver == null) {
+        	
             FirefoxOptions options = new FirefoxOptions();
-            options.setAcceptInsecureCerts(true);
+   
             options.setCapability("webSocketUrl", true); // enables bidi
 
             
@@ -132,6 +138,23 @@ public class BaseTest {
             options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
             
             driver = new FirefoxDriver(options);
+            
+            //ChromeOptions options = new ChromeOptions();
+            options.setAcceptInsecureCerts(true);
+            // Configurações de download
+            //options.addArguments("download.default_directory=" + DOWNLOAD_DIR); // Diretório de download
+            //options.addArguments("download.prompt_for_download=false"); // Não pedir confirmação para downloads
+
+            // Configuração de execução sem interface gráfica (headless), caso necessário
+            /*
+            options.addArguments("--headless"); // Ativa o modo sem interface gráfica
+            options.addArguments("--disable-gpu"); // Melhora o desempenho em headless
+            options.addArguments("--no-sandbox"); // Desabilita o sandbox
+            options.addArguments("--disable-dev-shm-usage"); // Otimização para o modo headless*/
+
+            // Inicializar o ChromeDriver com as opções configuradas
+          //  driver = new ChromeDriver(options);
+
             driver.manage().window().maximize();
             
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -176,6 +199,7 @@ public class BaseTest {
         } catch (Exception e) {
             // Handle the exception or log it
            // e.printStackTrace();
+        	  System.err.println("Error during loading wait: " + e.getMessage());
         }
     }
     
@@ -206,6 +230,10 @@ public class BaseTest {
 
         System.err.println("Download did not start within the timeout period");
         return false;
+    }
+
+    protected void scrollIntoView(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
     
     

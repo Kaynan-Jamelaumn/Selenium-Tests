@@ -30,7 +30,7 @@ public class EnterSalesPointTest extends BaseTest {
         WebElement targetRow = null;
         for (WebElement row : rows) {
             String instituicao = row.findElement(By.cssSelector("td[data-column-id='instituicao']")).getText();
-            if ("PV MONITORAMENTO (NÃO ALTERAR)".equals(instituicao)) {
+            if ("SIMTRO TESTE MONITORAMENTO (NÃO ALTERAR)".equals(instituicao)) {
                 targetRow = row;
                 break;
             }

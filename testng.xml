@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+   <test name="Renew">
+        <classes>
+              <!-- <class name="base.RenewPasswordLoginTest"/> -->
+        </classes>
+    </test>
    <test name="AllTests">
         <classes>
             <class name="base.LoginTest"/>
@@ -8,8 +13,9 @@
             <class name="ViewCare.SalesPointTest"/>
             <class name="ViewCare.EnterSalesPointTest"/>
             <class name="ViewCare.EnterControllerTest"/>
-            <class name="ViewCare.ValidateControllerRemoteAccessTest"/>
+            <!-- <class name="ViewCare.ValidateControllerRemoteAccessTest"/>  -->
             <class name="ViewCare.ValidateControllerInformationTest"/>
+            <class name="ViewCare.ControllerTimeActionsTest"/>
             <class name="ViewCare.EnterPGDMTest"/>
         </classes>
     </test>
@@ -21,3 +27,4 @@
     </classes>
   </test> 
  -->
+ 

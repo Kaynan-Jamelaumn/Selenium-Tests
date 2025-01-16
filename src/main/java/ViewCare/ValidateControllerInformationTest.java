@@ -174,7 +174,8 @@ public class ValidateControllerInformationTest extends BaseTest {
         }
         else {
         	
-        WebElement button = waitForElement(By.cssSelector(buttonSelector));
+        WebElement button = driver.findElement(By.cssSelector(buttonSelector));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", button);
         button.click();
         }
 
