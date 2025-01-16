@@ -6,27 +6,25 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
 
-
 public class EnterControllerTest extends BaseEquipmentTest {
+
+    private static final By TABLE_EQUIPMENT = By.cssSelector("#dados_equipamentos_tabela");
+    private static final By CARD_STATS = By.cssSelector(".card.card-stats");
 
     @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint"})
     public void testLastInfoFirstMonitorableIsValidController() {
-    	System.out.println();
-    	System.out.println("---------------CONTROLLER CARD---------------");
-     	System.out.println();
-        WebElement tableEquipement = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
-        List<WebElement> rows = tableEquipement.findElements(By.cssSelector(".card.card-stats"));
+        System.out.println("\n---------------CONTROLLER CARD---------------\n");
+        WebElement tableEquipment = waitForElement(TABLE_EQUIPMENT);
+        List<WebElement> rows = tableEquipment.findElements(CARD_STATS);
         Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
         validateLastInfo(rows.get(0));
     }
 
     @Test(priority = 2, dependsOnMethods = {"testLastInfoFirstMonitorableIsValidController"})
-    public void testAcessEquipmentController() {
-        WebElement tableEquipment = waitForElement(By.cssSelector("#dados_equipamentos_tabela"));
-        List<WebElement> rows = tableEquipment.findElements(By.cssSelector(".card.card-stats"));
+    public void testAccessEquipmentController() {
+        WebElement tableEquipment = waitForElement(TABLE_EQUIPMENT);
+        List<WebElement> rows = tableEquipment.findElements(CARD_STATS);
         Assert.assertFalse(rows.isEmpty(), "Client equipment not found!");
         accessEquipment(rows.get(0), "carregarControlador('3006099150085066');");
     }
-
-
 }

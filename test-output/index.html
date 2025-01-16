@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">24 methods, 3 failed,   21 passed</span>
+                    <span class="method-stats">27 methods, 5 failed,  6 skipped,  16 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -109,7 +109,17 @@
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testExportAccess">testExportAccess</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerRemoteAccessTest" class="method navigator-link" hash-for-method="testTryRemoteAccess">testTryRemoteAccess</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfAccess">testValidateNumberOfAccess</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfTime">testValidateNumberOfTime</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -120,6 +130,45 @@
                     </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ControllerTimeActionsTest" class="method navigator-link" hash-for-method="testCreateNewTime">testCreateNewTime</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testExportAccess">testExportAccess</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerRemoteAccessTest" class="method navigator-link" hash-for-method="testGenerateRandomPassword">testGenerateRandomPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerRemoteAccessTest" class="method navigator-link" hash-for-method="testTogglePassword">testTogglePassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfBiometry">testValidateNumberOfBiometry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfUsers">testValidateNumberOfUsers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
+                  </li>
+                  <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
                       <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
@@ -128,17 +177,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.EnterControllerTest" class="method navigator-link" hash-for-method="testAcessEquipmentController">testAcessEquipmentController</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="ViewCare.EnterControllerTest" class="method navigator-link" hash-for-method="testAccessEquipmentController">testAccessEquipmentController</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="ViewCare.SalesPointTest" class="method navigator-link" hash-for-method="testAssertNumberOfShowedResults">testAssertNumberOfShowedResults</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ControllerTimeActionsTest" class="method navigator-link" hash-for-method="testCreateNewTime">testCreateNewTime</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -208,26 +252,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfAcess">testValidateNumberOfAcess</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfBiometry">testValidateNumberOfBiometry</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfTime">testValidateNumberOfTime</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="ViewCare.ValidateControllerInformationTest" class="method navigator-link" hash-for-method="testValidateNumberOfUsers">testValidateNumberOfUsers</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="ViewCare.ViewCareTest" class="method navigator-link" hash-for-method="testViewCare">testViewCare</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -246,6 +270,72 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">ViewCare.ValidateControllerInformationTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidateNumberOfAccess">
+                  </a> <!-- testValidateNumberOfAccess -->
+                  <span class="method-name">testValidateNumberOfAccess</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (600,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=22132121-76d5-4f9f-a4aa-a813d7c323bf}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
+Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(4) .simtTitle]
+Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
+	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess(ValidateControllerInformationTest.java:96)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidateNumberOfTime">
+                  </a> <!-- testValidateNumberOfTime -->
+                  <span class="method-name">testValidateNumberOfTime</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (194,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=fdd95c6d-a40e-4acf-ac0f-a5af391affc0}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
+Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle]
+Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
+	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfTime(ValidateControllerInformationTest.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
               <span class="class-name">ViewCare.SalesPointTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -255,7 +345,7 @@
                   </a> <!-- testAssertNumberOfCLients -->
                   <span class="method-name">testAssertNumberOfCLients</span>
                   <div class="stack-trace">java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
-	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:155)
+	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:152)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 30 stack frames
 </div> <!-- stack-trace -->
@@ -275,7 +365,7 @@
                   </a> <!-- testValidatesNumberOfOS -->
                   <span class="method-name">testValidatesNumberOfOS</span>
                   <div class="stack-trace">java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
-	at ViewCare.EnterSalesPointTest.testValidatesNumberOfOS(EnterSalesPointTest.java:72)
+	at ViewCare.EnterSalesPointTest.testValidatesNumberOfOS(EnterSalesPointTest.java:75)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 30 stack frames
 </div> <!-- stack-trace -->
@@ -286,6 +376,53 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">ViewCare.ValidateControllerRemoteAccessTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTryRemoteAccess">
+                  </a> <!-- testTryRemoteAccess -->
+                  <span class="method-name">testTryRemoteAccess</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.className: loading (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
+Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ViewCare.ValidateControllerRemoteAccessTest.waitForElementToDisappear(ValidateControllerRemoteAccessTest.java:39)
+	at ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess(ValidateControllerRemoteAccessTest.java:62)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">ViewCare.ControllerTimeActionsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateNewTime">
+                  </a> <!-- testCreateNewTime -->
+                  <span class="method-name">testCreateNewTime</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ControllerTimeActionsTest.testCreateNewTime()[pri:1, instance:ViewCare.ControllerTimeActionsTest@3590fc5b] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
               <span class="class-name">ViewCare.ValidateControllerInformationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -294,15 +431,66 @@
                   <a name="testExportAccess">
                   </a> <!-- testExportAccess -->
                   <span class="method-name">testExportAccess</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test ExportAccess: Failed, download did not start expected [true] but found [false]
-	at ViewCare.ValidateControllerInformationTest.testExportAccess(ValidateControllerInformationTest.java:104)
+                  <div class="stack-trace">java.lang.Throwable: Method ValidateControllerInformationTest.testExportAccess()[pri:5, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidateNumberOfBiometry">
+                  </a> <!-- testValidateNumberOfBiometry -->
+                  <span class="method-name">testValidateNumberOfBiometry</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfBiometry()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidateNumberOfUsers">
+                  </a> <!-- testValidateNumberOfUsers -->
+                  <span class="method-name">testValidateNumberOfUsers</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfUsers()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">ViewCare.ValidateControllerRemoteAccessTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGenerateRandomPassword">
+                  </a> <!-- testGenerateRandomPassword -->
+                  <span class="method-name">testGenerateRandomPassword</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testGenerateRandomPassword()[pri:3, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTogglePassword">
+                  </a> <!-- testTogglePassword -->
+                  <span class="method-name">testTogglePassword</span>
+                  <div class="stack-trace">java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testTogglePassword()[pri:2, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -311,9 +499,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testAcessEquipmentController">
-                  </a> <!-- testAcessEquipmentController -->
-                  <span class="method-name">testAcessEquipmentController</span>
+                  <a name="testAccessEquipmentController">
+                  </a> <!-- testAccessEquipmentController -->
+                  <span class="method-name">testAccessEquipmentController</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -336,21 +524,6 @@
                   <a name="testLogin">
                   </a> <!-- testLogin -->
                   <span class="method-name">testLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">ViewCare.ControllerTimeActionsTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCreateNewTime">
-                  </a> <!-- testCreateNewTime -->
-                  <span class="method-name">testCreateNewTime</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -458,42 +631,6 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">ViewCare.ValidateControllerInformationTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testValidateNumberOfAcess">
-                  </a> <!-- testValidateNumberOfAcess -->
-                  <span class="method-name">testValidateNumberOfAcess</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testValidateNumberOfBiometry">
-                  </a> <!-- testValidateNumberOfBiometry -->
-                  <span class="method-name">testValidateNumberOfBiometry</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testValidateNumberOfTime">
-                  </a> <!-- testValidateNumberOfTime -->
-                  <span class="method-name">testValidateNumberOfTime</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testValidateNumberOfUsers">
-                  </a> <!-- testValidateNumberOfUsers -->
-                  <span class="method-name">testValidateNumberOfUsers</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">ViewCare.ViewCareTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -525,6 +662,7 @@
       &lt;class name=&quot;ViewCare.SalesPointTest&quot;/&gt;
       &lt;class name=&quot;ViewCare.EnterSalesPointTest&quot;/&gt;
       &lt;class name=&quot;ViewCare.EnterControllerTest&quot;/&gt;
+      &lt;class name=&quot;ViewCare.ValidateControllerRemoteAccessTest&quot;/&gt;
       &lt;class name=&quot;ViewCare.ValidateControllerInformationTest&quot;/&gt;
       &lt;class name=&quot;ViewCare.ControllerTimeActionsTest&quot;/&gt;
       &lt;class name=&quot;ViewCare.EnterPGDMTest&quot;/&gt;
@@ -544,7 +682,7 @@
                 <span class="test-name">Renew (0 classes)</span>
               </li>
               <li>
-                <span class="test-name">AllTests (8 classes)</span>
+                <span class="test-name">AllTests (9 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -570,108 +708,120 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(24);
+data.addRows(27);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testValidateNumberOfAcess')
-data.setCell(0, 2, 'ViewCare.ValidateControllerInformationTest')
-data.setCell(0, 3, 103344);
+data.setCell(0, 1, 'testTryRemoteAccess')
+data.setCell(0, 2, 'ViewCare.ValidateControllerRemoteAccessTest')
+data.setCell(0, 3, 64144);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testValidateNumberOfUsers')
-data.setCell(1, 2, 'ViewCare.ValidateControllerInformationTest')
-data.setCell(1, 3, 48186);
+data.setCell(1, 1, 'testViewCare')
+data.setCell(1, 2, 'ViewCare.ViewCareTest')
+data.setCell(1, 3, 5519);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testExportAccess')
-data.setCell(2, 2, 'ViewCare.ValidateControllerInformationTest')
-data.setCell(2, 3, 30745);
+data.setCell(2, 1, 'testAccessEquipmentController')
+data.setCell(2, 2, 'ViewCare.EnterControllerTest')
+data.setCell(2, 3, 1851);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testValidateNumberOfBiometry')
-data.setCell(3, 2, 'ViewCare.ValidateControllerInformationTest')
-data.setCell(3, 3, 25327);
+data.setCell(3, 1, 'testLogin')
+data.setCell(3, 2, 'base.LoginTest')
+data.setCell(3, 3, 733);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testCreateNewTime')
-data.setCell(4, 2, 'ViewCare.ControllerTimeActionsTest')
-data.setCell(4, 3, 18390);
+data.setCell(4, 1, 'testOnlineEquipements')
+data.setCell(4, 2, 'ViewCare.SalesPointTest')
+data.setCell(4, 3, 662);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testViewCare')
-data.setCell(5, 2, 'ViewCare.ViewCareTest')
-data.setCell(5, 3, 5582);
+data.setCell(5, 1, 'testLastInfoFirstMonitorableIsValidController')
+data.setCell(5, 2, 'ViewCare.EnterControllerTest')
+data.setCell(5, 3, 562);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testValidateNumberOfTime')
-data.setCell(6, 2, 'ViewCare.ValidateControllerInformationTest')
-data.setCell(6, 3, 4614);
+data.setCell(6, 1, 'testFilterSalesPointByTotalEquipment')
+data.setCell(6, 2, 'ViewCare.SalesPointTest')
+data.setCell(6, 3, 325);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testAcessEquipmentController')
-data.setCell(7, 2, 'ViewCare.EnterControllerTest')
-data.setCell(7, 3, 1858);
+data.setCell(7, 1, 'testFilterSalesPointByLastMessage')
+data.setCell(7, 2, 'ViewCare.SalesPointTest')
+data.setCell(7, 3, 324);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testLogin')
-data.setCell(8, 2, 'base.LoginTest')
-data.setCell(8, 3, 819);
+data.setCell(8, 1, 'testFilterSalesPointByClient')
+data.setCell(8, 2, 'ViewCare.SalesPointTest')
+data.setCell(8, 3, 321);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testOnlineEquipements')
+data.setCell(9, 1, 'testFilterSalesPointByServiceOrder')
 data.setCell(9, 2, 'ViewCare.SalesPointTest')
-data.setCell(9, 3, 635);
+data.setCell(9, 3, 318);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testLastInfoFirstMonitorableIsValidController')
-data.setCell(10, 2, 'ViewCare.EnterControllerTest')
-data.setCell(10, 3, 556);
+data.setCell(10, 1, 'testFilterSalesPointByID')
+data.setCell(10, 2, 'ViewCare.SalesPointTest')
+data.setCell(10, 3, 317);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testFilterSalesPointByClient')
+data.setCell(11, 1, 'testFilterSalesPointByOnlineEquipment')
 data.setCell(11, 2, 'ViewCare.SalesPointTest')
-data.setCell(11, 3, 337);
+data.setCell(11, 3, 314);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testFilterSalesPointByID')
+data.setCell(12, 1, 'testFilterSalesPointBySalesPoint')
 data.setCell(12, 2, 'ViewCare.SalesPointTest')
-data.setCell(12, 3, 330);
+data.setCell(12, 3, 306);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testFilterSalesPointByOnlineEquipment')
-data.setCell(13, 2, 'ViewCare.SalesPointTest')
-data.setCell(13, 3, 321);
+data.setCell(13, 1, 'testFetchListAndClickTheTestSalesPoint')
+data.setCell(13, 2, 'ViewCare.EnterSalesPointTest')
+data.setCell(13, 3, 267);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testFilterSalesPointBySalesPoint')
+data.setCell(14, 1, 'testFoundClientSalesPoint')
 data.setCell(14, 2, 'ViewCare.SalesPointTest')
-data.setCell(14, 3, 318);
+data.setCell(14, 3, 243);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'testFilterSalesPointByLastMessage')
-data.setCell(15, 2, 'ViewCare.SalesPointTest')
-data.setCell(15, 3, 315);
+data.setCell(15, 1, 'testValidateNameSalesPoint')
+data.setCell(15, 2, 'ViewCare.EnterSalesPointTest')
+data.setCell(15, 3, 60);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testFilterSalesPointByServiceOrder')
-data.setCell(16, 2, 'ViewCare.SalesPointTest')
-data.setCell(16, 3, 314);
+data.setCell(16, 1, 'testValidateNumberOfTime')
+data.setCell(16, 2, 'ViewCare.ValidateControllerInformationTest')
+data.setCell(16, 3, 47);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'testFilterSalesPointByTotalEquipment')
+data.setCell(17, 1, 'testAssertNumberOfCLients')
 data.setCell(17, 2, 'ViewCare.SalesPointTest')
-data.setCell(17, 3, 311);
+data.setCell(17, 3, 40);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'testFetchListAndClickTheTestSalesPoint')
-data.setCell(18, 2, 'ViewCare.EnterSalesPointTest')
-data.setCell(18, 3, 268);
+data.setCell(18, 1, 'testValidateNumberOfAccess')
+data.setCell(18, 2, 'ViewCare.ValidateControllerInformationTest')
+data.setCell(18, 3, 36);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'testFoundClientSalesPoint')
+data.setCell(19, 1, 'testAssertNumberOfShowedResults')
 data.setCell(19, 2, 'ViewCare.SalesPointTest')
-data.setCell(19, 3, 229);
+data.setCell(19, 3, 29);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'testValidateNameSalesPoint')
+data.setCell(20, 1, 'testValidatesNumberOfOS')
 data.setCell(20, 2, 'ViewCare.EnterSalesPointTest')
-data.setCell(20, 3, 62);
+data.setCell(20, 3, 18);
 data.setCell(21, 0, 21)
-data.setCell(21, 1, 'testAssertNumberOfCLients')
-data.setCell(21, 2, 'ViewCare.SalesPointTest')
-data.setCell(21, 3, 34);
+data.setCell(21, 1, 'testGenerateRandomPassword')
+data.setCell(21, 2, 'ViewCare.ValidateControllerRemoteAccessTest')
+data.setCell(21, 3, 0);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'testAssertNumberOfShowedResults')
-data.setCell(22, 2, 'ViewCare.SalesPointTest')
-data.setCell(22, 3, 28);
+data.setCell(22, 1, 'testValidateNumberOfBiometry')
+data.setCell(22, 2, 'ViewCare.ValidateControllerInformationTest')
+data.setCell(22, 3, 0);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'testValidatesNumberOfOS')
-data.setCell(23, 2, 'ViewCare.EnterSalesPointTest')
-data.setCell(23, 3, 19);
+data.setCell(23, 1, 'testTogglePassword')
+data.setCell(23, 2, 'ViewCare.ValidateControllerRemoteAccessTest')
+data.setCell(23, 3, 0);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testValidateNumberOfUsers')
+data.setCell(24, 2, 'ViewCare.ValidateControllerInformationTest')
+data.setCell(24, 3, 0);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'testExportAccess')
+data.setCell(25, 2, 'ViewCare.ValidateControllerInformationTest')
+data.setCell(25, 3, 0);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testCreateNewTime')
+data.setCell(26, 2, 'ViewCare.ControllerTimeActionsTest')
+data.setCell(26, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -704,187 +854,208 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testLogin</span>
-                <span class="method-start">8651 ms</span>
+                <span class="method-start">8307 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">9474 ms</span>
+                <span class="method-start">9043 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.ViewCareTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">9476 ms</span>
+                <span class="method-start">9044 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testViewCare</span>
-                <span class="method-start">9477 ms</span>
+                <span class="method-start">9045 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15060 ms</span>
+                <span class="method-start">14565 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.SalesPointTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">15061 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testOnlineEquipements</span>
-                <span class="method-start">15062 ms</span>
+                <span class="method-start">14566 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">14566 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testFoundClientSalesPoint</span>
-                <span class="method-start">15698 ms</span>
+                <span class="method-start">15229 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByClient</span>
-                <span class="method-start">15928 ms</span>
+                <span class="method-start">15473 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByID</span>
-                <span class="method-start">16267 ms</span>
+                <span class="method-start">15796 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByLastMessage</span>
-                <span class="method-start">16598 ms</span>
+                <span class="method-start">16115 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByOnlineEquipment</span>
-                <span class="method-start">16915 ms</span>
+                <span class="method-start">16440 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointBySalesPoint</span>
-                <span class="method-start">17237 ms</span>
+                <span class="method-start">16755 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByServiceOrder</span>
-                <span class="method-start">17556 ms</span>
+                <span class="method-start">17062 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFilterSalesPointByTotalEquipment</span>
-                <span class="method-start">17872 ms</span>
+                <span class="method-start">17381 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testAssertNumberOfCLients</span>
-                <span class="method-start">18184 ms</span>
+                <span class="method-start">17709 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testAssertNumberOfShowedResults</span>
-                <span class="method-start">18221 ms</span>
+                <span class="method-start">17751 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">18250 ms</span>
+                <span class="method-start">17782 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.EnterSalesPointTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">testFetchListAndClickTheTestSalesPoint</span>
-                <span class="method-start">18250 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">18250 ms</span>
+                <span class="method-start">17782 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">testFetchListAndClickTheTestSalesPoint</span>
+                <span class="method-start">17783 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">testValidateNameSalesPoint</span>
-                <span class="method-start">18520 ms</span>
+                <span class="method-start">18052 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testValidatesNumberOfOS</span>
-                <span class="method-start">18583 ms</span>
+                <span class="method-start">18113 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">18132 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.EnterControllerTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">18603 ms</span>
+                <span class="method-start">18133 ms</span>
               </div> <!-- configuration-class before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">ViewCare.EnterSalesPointTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">18603 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">ViewCare.EnterControllerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testLastInfoFirstMonitorableIsValidController</span>
-                <span class="method-start">18604 ms</span>
+                <span class="method-start">18133 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testAcessEquipmentController</span>
-                <span class="method-start">19161 ms</span>
+                <span class="method-name">testAccessEquipmentController</span>
+                <span class="method-start">18697 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">20549 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ViewCare.ValidateControllerRemoteAccessTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">20550 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testTryRemoteAccess</span>
+                <span class="method-start">20550 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTogglePassword</span>
+                <span class="method-start">84697 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGenerateRandomPassword</span>
+                <span class="method-start">84699 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">84700 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.ValidateControllerInformationTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">21021 ms</span>
+                <span class="method-start">84700 ms</span>
               </div> <!-- configuration-class before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">ViewCare.EnterControllerTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">21021 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">ViewCare.ValidateControllerInformationTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testValidateNumberOfUsers</span>
-                <span class="method-start">21022 ms</span>
+                <span class="method-start">84700 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testValidateNumberOfBiometry</span>
-                <span class="method-start">69209 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testValidateNumberOfTime</span>
-                <span class="method-start">94537 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testValidateNumberOfAcess</span>
-                <span class="method-start">99153 ms</span>
+                <span class="method-start">84702 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testExportAccess</span>
-                <span class="method-start">202499 ms</span>
+                <span class="method-name">testValidateNumberOfTime</span>
+                <span class="method-start">84703 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testValidateNumberOfAccess</span>
+                <span class="method-start">84752 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testExportAccess</span>
+                <span class="method-start">84790 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ViewCare.ControllerTimeActionsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testCreateNewTime</span>
+                <span class="method-start">84791 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">84791 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">ViewCare.ValidateControllerInformationTest</div> <!-- chronological-class-name -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">233247 ms</span>
+                <span class="method-start">84791 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ViewCare.ControllerTimeActionsTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">233248 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">testCreateNewTime</span>
-                <span class="method-start">233248 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">251639 ms</span>
+                <span class="method-start">84793 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

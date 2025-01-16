@@ -20,8 +20,17 @@ import java.util.regex.Pattern;
 @Listeners(CustomTestListener.class)
 public class BaseEquipmentTest extends BaseTest {
 
+    // Locator Constants
+    private static final By STATS_CLASS = By.className("stats");
+    private static final By CARD_FOOTER = By.className("card-footer");
+    private static final By BUTTON_TAG = By.tagName("button");
+    private static final By LOADING_CLASS = By.className("loading");
+    private static final By INFO_MESSAGE_ID = By.id("info_mensagem");
+    private static final By MODAL_FOOTER = By.className("modal-footer");
+    private static final By LINK_TAG = By.tagName("a");
+
     protected void validateLastInfo(WebElement row) {
-        String text = row.findElement(By.className("stats")).getText();
+        String text = row.findElement(STATS_CLASS).getText();
 
         Pattern pattern = Pattern.compile("Última informação: (\\d{2}/\\d{2}/\\d{4}) (\\d{2}:\\d{2}:\\d{2})");
         Matcher matcher = pattern.matcher(text);
@@ -46,35 +55,32 @@ public class BaseEquipmentTest extends BaseTest {
     }
 
     protected void accessEquipment(WebElement row, String script, String... args) {
-        WebElement footer = row.findElement(By.className("card-footer"));
-        WebElement button = footer.findElement(By.tagName("button"));
+        WebElement footer = row.findElement(CARD_FOOTER);
+        WebElement button = footer.findElement(BUTTON_TAG);
         Assert.assertNotNull(button, "Element 'button' not found");
         button.click();
         
-        WebElement loadingElement = driver.findElement(By.className("loading"));
-	    if (loadingElement.isDisplayed()) {
-	    	waitForElementToDisappear(By.className("loading"));
+        WebElement loadingElement = driver.findElement(LOADING_CLASS);
+        if (loadingElement.isDisplayed()) {
+            waitForElementToDisappear(LOADING_CLASS);
             System.out.println("Loading completed.");
-	    }
-	    else {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        try {
-            WebElement offlinePopup = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("info_mensagem")));
+        } else {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            try {
+                WebElement offlinePopup = wait.until(ExpectedConditions.visibilityOfElementLocated(INFO_MESSAGE_ID));
 
-            if (offlinePopup.isDisplayed()) {
-                WebElement parentElement = offlinePopup.findElement(By.xpath("../.."));
-                WebElement siblingDivCloseButton = parentElement.findElement(By.className("modal-footer"));
-                WebElement linkElement = siblingDivCloseButton.findElement(By.tagName("a"));
+                if (offlinePopup.isDisplayed()) {
+                    WebElement parentElement = offlinePopup.findElement(By.xpath("../.."));
+                    WebElement siblingDivCloseButton = parentElement.findElement(MODAL_FOOTER);
+                    WebElement linkElement = siblingDivCloseButton.findElement(LINK_TAG);
 
-                linkElement.click();
-                Assert.fail("Popup 'offlinePopup' should not be displayed. Equipment is offline.");
+                    linkElement.click();
+                    Assert.fail("Popup 'offlinePopup' should not be displayed. Equipment is offline.");
+                }
+            } catch (Exception e) {
+                tryWaitLoading();
+                System.out.println("Loading completed.");
             }
-        } catch (Exception e) {
-        	tryWaitLoading();
-            //waitForElement(By.className("loading"));
-            //waitForElementToDisappear(By.className("loading"));
-            System.out.println("Loading completed.");
-        }
         }
     }
 }

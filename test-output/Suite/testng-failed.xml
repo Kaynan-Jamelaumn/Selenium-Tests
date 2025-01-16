@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testAcessEquipmentController"/>
+          <include name="testAccessEquipmentController"/>
           <include name="testLastInfoFirstMonitorableIsValidController"/>
         </methods>
       </class> <!-- ViewCare.EnterControllerTest -->
@@ -18,6 +18,24 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- base.LoginTest -->
+      <class name="ViewCare.ControllerTimeActionsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testCreateNewTime"/>
+        </methods>
+      </class> <!-- ViewCare.ControllerTimeActionsTest -->
+      <class name="ViewCare.ValidateControllerInformationTest">
+        <methods>
+          <include name="testValidateNumberOfAccess"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testValidateNumberOfTime"/>
+          <include name="testExportAccess"/>
+          <include name="testValidateNumberOfBiometry"/>
+          <include name="testValidateNumberOfUsers"/>
+        </methods>
+      </class> <!-- ViewCare.ValidateControllerInformationTest -->
       <class name="ViewCare.SalesPointTest">
         <methods>
           <include name="setUp"/>
@@ -34,14 +52,15 @@
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.EnterSalesPointTest -->
-      <class name="ViewCare.ValidateControllerInformationTest">
+      <class name="ViewCare.ValidateControllerRemoteAccessTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testValidateNumberOfAcess"/>
-          <include name="testExportAccess"/>
+          <include name="testTogglePassword"/>
+          <include name="testTryRemoteAccess"/>
+          <include name="testGenerateRandomPassword"/>
         </methods>
-      </class> <!-- ViewCare.ValidateControllerInformationTest -->
+      </class> <!-- ViewCare.ValidateControllerRemoteAccessTest -->
       <class name="ViewCare.ViewCareTest">
         <methods>
           <include name="setUp"/>

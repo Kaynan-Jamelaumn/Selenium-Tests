@@ -13,57 +13,72 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import base.CustomTestListener;
-@Listeners(CustomTestListener.class)
-public class ValidateControllerRemoteAccessTest extends BaseTest  {
-	 protected Duration TIMEOUT = Duration.ofSeconds(60);
-	    private int numberOfBiometry = 0;
-	    
-	    @Override
-	    protected void waitForElementToDisappear(By locator) {
-	        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
-	        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-	    }
 
-	
-	@Test(priority = 1, dependsOnMethods = {"ViewCare.EnterControllerTest.testAcessEquipmentController"})
+@Listeners(CustomTestListener.class)
+public class ValidateControllerRemoteAccessTest extends BaseTest {
+    protected Duration TIMEOUT = Duration.ofSeconds(60);
+    private int numberOfBiometry = 0;
+
+    // Locator constants
+    private static final By CONTROLLER_LOCATION = By.id("localizacaoControlador");
+    private static final By CONTROLLER_GRID = By.id("controladorGrid");
+    private static final By REMOTE_ACCESS_BUTTON = By.id("abertura_remota");
+    private static final By REMOTE_ACCESS_REASON = By.id("acionamento_remoto_motivo");
+    private static final By REMOTE_ACCESS_CONFIRM_BUTTON = By.cssSelector("#myModalAberturaRemota .modal-footer .simtro-text-button-alternative");
+    private static final By LOADING_SPINNER = By.className("loading");
+    private static final By INFO_MESSAGE = By.id("info_mensagem");
+    private static final By MODAL_CLOSE_BUTTON = By.cssSelector("#myModal .modal-dialog .modal-content .modal-footer .simtro-text-button-alternative");
+    private static final By RANDOM_PASSWORD_TAB = By.cssSelector("#detalhamento_controlador .simtroDivHeader ul li:nth-of-type(3) a");
+    private static final By TOGGLE_PASSWORD_BUTTON = By.id("toggle_senha");
+    private static final By PASSWORD_LABEL = By.id("codigoSenhaRandomica");
+    private static final By GENERATE_PASSWORD_BUTTON = By.id("gerar_senha");
+
+    @Override
+    protected void waitForElementToDisappear(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    @Test(priority = 1, dependsOnMethods = {"ViewCare.EnterControllerTest.testAccessEquipmentController"})
     public void testTryRemoteAccess() {
-    	System.out.println();
-    	System.out.println("---------------CONTROLLER REMOTE ACCESS---------------");
-    	System.out.println();
-        WebElement controllerLocationElement =  driver.findElement(By.id("localizacaoControlador"));
-        
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", controllerLocationElement);
-        
-        String controllerLocation =  controllerLocationElement.getText();
-        WebElement controllerAccessButtonCard = driver.findElement(By.id("controladorGrid"));
-        WebElement  controllerAccessButton = controllerAccessButtonCard.findElement(By.tagName("div")).findElement(By.tagName("div")).findElement(By.tagName("a"));
-        if (controllerLocation.equals("EXTERNO"))
-        {
-        	driver.findElement(By.id("abertura_remota")).click();
-        	WebElement motiveInput = waitForElement(By.id("acionamento_remoto_motivo"));
-        	motiveInput.sendKeys("teste automatizado");
-        	WebElement button = driver.findElement(By.cssSelector("#myModalAberturaRemota .modal-footer .simtro-text-button-alternative"));
-        	button.click();
-            waitForElement(By.className("loading"));
-            waitForElementToDisappear(By.className("loading"));
-            WebElement info =  waitForElement(By.id("info_mensagem"));
-            Assert.assertEquals(info.getText().trim(), "Controlador aberto com sucesso.", "Error: Controller did not properly remotely open");
-            WebElement closeButton = waitForElement(By.cssSelector("#myModal .modal-dialog .modal-content .modal-footer .simtro-text-button-alternative"));
+        System.out.println("\n---------------CONTROLLER REMOTE ACCESS---------------\n");
+
+        WebElement controllerLocationElement = driver.findElement(CONTROLLER_LOCATION);
+        scrollIntoView(controllerLocationElement);
+
+        String controllerLocation = controllerLocationElement.getText();
+        WebElement controllerAccessButtonCard = driver.findElement(CONTROLLER_GRID);
+        WebElement controllerAccessButton = controllerAccessButtonCard.findElement(By.tagName("div"))
+                .findElement(By.tagName("div"))
+                .findElement(By.tagName("a"));
+
+        if (controllerLocation.equals("EXTERNO")) {
+            driver.findElement(REMOTE_ACCESS_BUTTON).click();
+            WebElement motiveInput = waitForElement(REMOTE_ACCESS_REASON);
+            motiveInput.sendKeys("teste automatizado");
+            WebElement button = driver.findElement(REMOTE_ACCESS_CONFIRM_BUTTON);
+            button.click();
+            waitForElement(LOADING_SPINNER);
+            waitForElementToDisappear(LOADING_SPINNER);
+            WebElement info = waitForElement(INFO_MESSAGE);
+            Assert.assertEquals(info.getText().trim(), "Controlador aberto com sucesso.",
+                    "Error: Controller did not properly remotely open");
+            WebElement closeButton = waitForElement(MODAL_CLOSE_BUTTON);
             closeButton.click();
-        }	
-        else {
-        		Assert.assertNull(controllerAccessButton, "Should not be able to remotely access this type of controller");
-        	}
+        } else {
+            Assert.assertNull(controllerAccessButton,
+                    "Should not be able to remotely access this type of controller");
+        }
+
         System.out.println("TEST testTryRemoteAccess: passed");
-        
     }
 
     @Test(priority = 2, dependsOnMethods = {"testTryRemoteAccess"})
     public void testTogglePassword() {
-        WebElement randomPasswordTab = waitForElement(By.cssSelector("#detalhamento_controlador .simtroDivHeader ul li:nth-of-type(3) a"));
+        WebElement randomPasswordTab = waitForElement(RANDOM_PASSWORD_TAB);
         randomPasswordTab.click();
 
-        WebElement toggleButton = waitForElement(By.id("toggle_senha"));
+        WebElement toggleButton = waitForElement(TOGGLE_PASSWORD_BUTTON);
         String initialText = getPasswordLabel();
 
         clickAndWait(toggleButton, 1000);
@@ -76,18 +91,19 @@ public class ValidateControllerRemoteAccessTest extends BaseTest  {
 
     @Test(priority = 3, dependsOnMethods = {"testTogglePassword"})
     public void testGenerateRandomPassword() {
-        WebElement toggleButton = waitForElement(By.id("toggle_senha"));
+        WebElement toggleButton = waitForElement(TOGGLE_PASSWORD_BUTTON);
         clickAndWait(toggleButton, 1000);
 
         String currentPassword = getPasswordLabel();
 
-        WebElement generateRandomPasswordButton = waitForElement(By.id("gerar_senha"));
+        WebElement generateRandomPasswordButton = waitForElement(GENERATE_PASSWORD_BUTTON);
         generateRandomPasswordButton.click();
 
-        WebElement generatedText = waitForElement(By.id("info_mensagem"));
-        Assert.assertEquals(generatedText.getText().trim(), "Senha randômica gerada com sucesso.", "Unexpected error while generating password.");
+        WebElement generatedText = waitForElement(INFO_MESSAGE);
+        Assert.assertEquals(generatedText.getText().trim(), "Senha randômica gerada com sucesso.",
+                "Unexpected error while generating password.");
 
-        WebElement closeButton = waitForElement(By.cssSelector("#myModal .modal-footer .simtro-text-button-alternative"));
+        WebElement closeButton = waitForElement(MODAL_CLOSE_BUTTON);
         closeButton.click();
 
         clickAndWait(toggleButton, 1000);
@@ -97,8 +113,7 @@ public class ValidateControllerRemoteAccessTest extends BaseTest  {
 
         System.out.println("TEST testGenerateRandomPassword: passed");
     }
-    
-    
+
     private void clickAndWait(WebElement element, int waitMillis) {
         element.click();
         try {
@@ -109,12 +124,11 @@ public class ValidateControllerRemoteAccessTest extends BaseTest  {
     }
 
     private String getPasswordLabel() {
-        return driver.findElement(By.id("codigoSenhaRandomica")).getText();
+        return driver.findElement(PASSWORD_LABEL).getText();
     }
 
     private void verifyPasswordChange(String initialText, String newText) {
         Assert.assertNotEquals(initialText, newText, "Random Password label did not change");
         Assert.assertTrue(newText.matches("\\d+"), "The label is not a number");
     }
-
 }

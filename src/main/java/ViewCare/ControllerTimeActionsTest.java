@@ -28,13 +28,19 @@ public class ControllerTimeActionsTest extends BaseTest {
     private static final By MODAL_CONFIRM_BUTTON = By.cssSelector("#myModal .simtro-text-button-alternative");
     private static final By LOADING_SPINNER = By.className("loading");
     private static final String NEW_TIME_CREATED_NAME = "Teste Automatizado";
+    private static final By CONTROLLER_TIMES_CARD = By.cssSelector("#detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle");
+    private static final By ADD_TIME_BUTTON = By.id("botao_horario_modal");
+    private static final By MODAL_NAME_INPUT = By.id("controlador_horario_nome");
+    private static final By MODAL_START_TIME_INPUT = By.id("controlador_horario_inicio");
+    private static final By MODAL_END_TIME_INPUT = By.id("controlador_horario_fim");
+    private static final By EVERY_DAY_AVAILABLE = By.cssSelector(".modal-body .row:nth-of-type(5) div:nth-of-type(4) label");
 
     @Override
     protected void waitForElementToDisappear(By locator) {
         new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
-    @Test(priority = 1, dependsOnMethods = {"ViewCare.ValidateControllerInformationTest.testValidateNumberOfAcess"})
+    @Test(priority = 1, dependsOnMethods = {"ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess"})
     public void testCreateNewTime() {
         System.out.println("\n---------------CONTROLLER TIME ACTIONS---------------\n");
 
@@ -61,7 +67,7 @@ public class ControllerTimeActionsTest extends BaseTest {
     }
 
     private void navigateToControllerTimes() {
-        WebElement controllerTimes = driver.findElement(By.cssSelector("#detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle"));
+        WebElement controllerTimes = driver.findElement(CONTROLLER_TIMES_CARD);
         scrollIntoView(controllerTimes);
         controllerTimes.click();
     }
@@ -75,16 +81,16 @@ public class ControllerTimeActionsTest extends BaseTest {
     }
 
     private void createNewTime(WebElement createTimeButton, String name, String startTime, String endTime) {
-        WebElement addTimeButton = driver.findElement(By.id("botao_horario_modal"));
+        WebElement addTimeButton = driver.findElement(ADD_TIME_BUTTON);
         createTimeButton.click();
 
         WebElement modalContent = waitForElement(MODAL_CONTENT);
 
-        fillModalInput(modalContent, addTimeButton, "controlador_horario_nome", name, "Por favor, digite um nome para o horário.");
-        fillModalInput(modalContent, addTimeButton, "controlador_horario_inicio", startTime, "Por favor, digite o horário de início.");
-        fillModalInput(modalContent, addTimeButton, "controlador_horario_fim", endTime, "Por favor, digite o horário de final.");
+        fillModalInput(modalContent, addTimeButton, MODAL_NAME_INPUT, name, "Por favor, digite um nome para o horário.");
+        fillModalInput(modalContent, addTimeButton, MODAL_START_TIME_INPUT, startTime, "Por favor, digite o horário de início.");
+        fillModalInput(modalContent, addTimeButton, MODAL_END_TIME_INPUT, endTime, "Por favor, digite o horário de final.");
 
-        modalContent.findElement(By.cssSelector(".modal-body .row:nth-of-type(5) div:nth-of-type(4) label")).click();
+        modalContent.findElement(EVERY_DAY_AVAILABLE).click();
 
         addTimeButton.click();
         waitForElement(LOADING_SPINNER);
@@ -95,12 +101,12 @@ public class ControllerTimeActionsTest extends BaseTest {
         driver.findElement(MODAL_CONFIRM_BUTTON).click();
     }
 
-    private void fillModalInput(WebElement modalContent, WebElement addTimeButton, String inputId, String value, String validationMessage) {
+    private void fillModalInput(WebElement modalContent, WebElement addTimeButton, By inputId, String value, String validationMessage) {
         addTimeButton.click();
         Assert.assertEquals(waitForElement(INFO_MESSAGE).getText(), validationMessage, "Validation message mismatch.");
         driver.findElement(MODAL_CONFIRM_BUTTON).click();
 
-        modalContent.findElement(By.id(inputId)).sendKeys(value);
+        modalContent.findElement(inputId).sendKeys(value);
     }
 
     private void validateNewTimeEntry(List<WebElement> newRows, String expectedName) {

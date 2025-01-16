@@ -1,6 +1,6 @@
 package ViewCare;
-import base.BaseTest;
 
+import base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,16 +16,22 @@ import java.util.stream.Collectors;
 @Listeners(base.CustomTestListener.class)
 public class SalesPointTest extends BaseTest {
 
+    // Define locators as constants
+    private static final By MAIN_DIV = By.id("monitoramento");
+    private static final By TOTAL_MONITORADOS = By.id("totalMonitorados");
+    private static final By EQUIP_ATIVO_QTD = By.id("equipAtivoQtd");
+    private static final By EQUIP_INATIVO_QTD = By.id("equipInativoQtd");
+    private static final By EQUIP_ONLINE_QTD = By.id("equipOnlineQtd");
+    private static final By EQUIP_OFFLINE_QTD = By.id("equipOfflineQtd");
+    private static final By TABLE_BODY = By.cssSelector("#listagem_dashboard_view_care table tbody");
+    private static final By PONTOS_DE_VENDA_QT = By.id("pontosDeVendaQtd");
 
-    
     @Test(priority = 1, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
     public void testOnlineEquipements() {
-		System.out.println();
-	   	System.out.println("---------------CLEINTS---------------");
-	   	System.out.println();
+        System.out.println("\n---------------CLEINTS---------------\n");
         try {
             // Wait for the Main Element
-            WebElement mainDiv = waitForElement(By.id("monitoramento"));
+            WebElement mainDiv = waitForElement(MAIN_DIV);
             Assert.assertNotNull(mainDiv, "Element 'monitoramento' not found");
 
             // Select The Cards
@@ -38,15 +44,15 @@ public class SalesPointTest extends BaseTest {
 
             // Wait until 'totalMonitorados' is visible
             WebElement totalMonitorados = new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("totalMonitorados")));
+                    .until(ExpectedConditions.visibilityOfElementLocated(TOTAL_MONITORADOS));
             Assert.assertNotNull(totalMonitorados, "Element 'totalMonitorados' is not found");
 
             WebElement equipAtivoQtd = new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("equipAtivoQtd")));
+                    .until(ExpectedConditions.visibilityOfElementLocated(EQUIP_ATIVO_QTD));
             Assert.assertNotNull(equipAtivoQtd, "Element 'equipAtivoQtd' is not found");
 
             WebElement equipInativoQtd = new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("equipInativoQtd")));
+                    .until(ExpectedConditions.visibilityOfElementLocated(EQUIP_INATIVO_QTD));
             Assert.assertNotNull(equipInativoQtd, "Element 'equipInativoQtd' is not found");
 
             int numberOfEquipDisabled = Integer.parseInt(equipInativoQtd.getText().trim());
@@ -62,18 +68,18 @@ public class SalesPointTest extends BaseTest {
             } catch (AssertionError e) {
                 // If the first assertion fails, check if the number of online equipment equals the number of active equipment
                 WebElement equipOnlineQtd = new WebDriverWait(driver, TIMEOUT)
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.id("equipOnlineQtd")));
+                        .until(ExpectedConditions.visibilityOfElementLocated(EQUIP_ONLINE_QTD));
                 Assert.assertNotNull(equipOnlineQtd, "Element 'equipOnlineQtd' is not found");
-                	
+
                 Assert.assertEquals(equipOnlineQtd.getText(), equipAtivoQtd.getText(), "Active and Online equipment don't match");
                 System.out.println("Active and Online equipment match");
                 throw e;  // Rethrow the exception so the test still fails after the additional check
             }
 
             WebElement equipOfflineQtd = new WebDriverWait(driver, TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("equipOfflineQtd")));
+                    .until(ExpectedConditions.visibilityOfElementLocated(EQUIP_OFFLINE_QTD));
             Assert.assertNotNull(equipOfflineQtd, "Element 'equipOfflineQtd' is not found");
-            
+
             System.out.println("TEST testOnlineEquipements: passed");
 
         } catch (Exception e) {
@@ -81,22 +87,13 @@ public class SalesPointTest extends BaseTest {
         }
     }
 
-    
-    
-    
-    
-    
-    
     @Test(priority = 2, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
     public void testFoundClientSalesPoint() {
-		System.out.println();
-	   	System.out.println("---------------Filter Sales Points---------------");
-	   	System.out.println();
-        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+        System.out.println("\n---------------Filter Sales Points---------------\n");
+        WebElement tableBody = waitForElement(TABLE_BODY);
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
-        System.out.println();
-        System.out.println("Clients List");
+        System.out.println("\n Clients List");
         System.out.println("TEST testFoundClientSalesPoint: Client Sales Point List:");
         for (WebElement row : rows) {
             List<WebElement> cols = row.findElements(By.tagName("td"));
@@ -145,43 +142,41 @@ public class SalesPointTest extends BaseTest {
     }
 
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testAssertNumberOfCLients(){
-    	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
-    	WebElement pontosDeVendaQt = waitForElement(By.id("pontosDeVendaQtd"));
-    	int numberOfSalesPoints = Integer.parseInt(pontosDeVendaQt.getText().trim());
-        
+    public void testAssertNumberOfCLients() {
+        WebElement tableBody = waitForElement(TABLE_BODY);
+        WebElement pontosDeVendaQt = waitForElement(PONTOS_DE_VENDA_QT);
+        int numberOfSalesPoints = Integer.parseInt(pontosDeVendaQt.getText().trim());
+
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
         Assert.assertEquals(numberOfSalesPoints, rows.size(), "Number of Shown Sales Points And Number of Sales Points Are Different");
         System.out.println("TEST testAssertNumberOfCLients: Number of Sales points and  number of Sales Points Match");
-
     }
 
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testAssertNumberOfShowedResults(){
-    	WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
-    	List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-    	Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
-    	
-    	WebElement showedResults = driver.findElement(By.cssSelector("#listagem_dashboard_view_care .gridjs-footer .gridjs-summary"));
-    	List<WebElement> boldElements = showedResults.findElements(By.tagName("b"));
-    	Assert.assertTrue(boldElements.size() >= 3, "Not Enough Bold Elements");
-    	 
-    	String  numberOfShowedResultsString =  boldElements.get(2).getText().trim();
-    	int numberOfShowedResults = Integer.parseInt(numberOfShowedResultsString);
+    public void testAssertNumberOfShowedResults() {
+        WebElement tableBody = waitForElement(TABLE_BODY);
+        List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
+        Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
+
+        WebElement showedResults = driver.findElement(By.cssSelector("#listagem_dashboard_view_care .gridjs-footer .gridjs-summary"));
+        List<WebElement> boldElements = showedResults.findElements(By.tagName("b"));
+        Assert.assertTrue(boldElements.size() >= 3, "Not Enough Bold Elements");
+
+        String numberOfShowedResultsString = boldElements.get(2).getText().trim();
+        int numberOfShowedResults = Integer.parseInt(numberOfShowedResultsString);
         Assert.assertEquals(numberOfShowedResults, rows.size(), "Number of Shown Sales Points And Number of Sales Points Are Different");
         System.out.println("TEST testAssertNumberOfShowedResults: Number of Sales points and  number of Sales Points Match");
-
     }
-    
+
     private void testFilterSalesPoint(String columnId, String errorMessage, String testName) {
-        WebElement tableBody = waitForElement(By.cssSelector("#listagem_dashboard_view_care table tbody"));
+        WebElement tableBody = waitForElement(TABLE_BODY);
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), errorMessage);
 
         List<String> originalList = rows.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
-            .collect(Collectors.toList());
+                .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+                .collect(Collectors.toList());
 
         List<String> sortedList = new ArrayList<>(originalList);
         sortedList.sort(String::compareTo);
@@ -195,12 +190,11 @@ public class SalesPointTest extends BaseTest {
 
         List<WebElement> sortedRowsUI = tableBody.findElements(By.tagName("tr"));
         List<String> uiSortedList = sortedRowsUI.stream()
-            .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
-            .collect(Collectors.toList());
+                .map(row -> row.findElement(By.cssSelector("td[data-column-id='" + columnId + "']")).getText())
+                .collect(Collectors.toList());
 
         Assert.assertEquals(uiSortedList, sortedList, "UI sorting does not match programmatic sorting!");
-        System.out.println("TEST " + testName+ ": passed");
+        System.out.println("TEST " + testName + ": passed");
     }
-    
 
 }
