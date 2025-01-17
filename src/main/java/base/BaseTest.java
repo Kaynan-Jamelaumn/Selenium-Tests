@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -234,6 +235,24 @@ public class BaseTest {
 
     protected void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+    }
+    protected void scrollIntoViewAndClick(By locator) {
+    	 WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+        element.click();
+    }
+    
+    protected void clickButton(By locator) {
+        driver.findElement(locator).click();
+    }
+
+    protected void selectDropdownOption(By selector, String value) {
+        WebElement dropdown = driver.findElement(selector);
+        new Select(dropdown).selectByValue(value);
+    }
+    protected void selectDropdownOptionOnText(By selector, String text) {
+        WebElement dropdown = driver.findElement(selector);
+        new Select(dropdown).selectByVisibleText(text);
     }
     
     

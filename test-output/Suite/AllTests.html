@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>AllTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>16/5/6</td>
+<td>Tests passed/Failed/Skipped:</td><td>21/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 16 16:18:51 BRT 2025</td>
+<td>Started on:</td><td>Fri Jan 17 10:36:15 BRT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>84 seconds (84803 ms)</td>
+<tr><td>Total time:</td><td>259 seconds (259617 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,50 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfTime()'><b>testValidateNumberOfTime</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (194,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=fdd95c6d-a40e-4acf-ac0f-a5af391affc0}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle]
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
-	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfTime(ValidateControllerInformationTest.java:84)
+<td title='ViewCare.SalesPointTest.testAssertNumberOfCLients()'><b>testAssertNumberOfCLients</b><br>Test class: ViewCare.SalesPointTest</td>
+<td><div><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
+	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:152)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace602748972", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace602748972'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (194,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=fdd95c6d-a40e-4acf-ac0f-a5af391affc0}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(3) .simtTitle]
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
-	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfTime(ValidateControllerInformationTest.java:84)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace160945458", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace160945458'><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:907)
+	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:152)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -147,67 +115,14 @@ Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerInformationTest@41d477ed</td></tr>
-<tr>
-<td title='ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess()'><b>testTryRemoteAccess</b><br>Test class: ViewCare.ValidateControllerRemoteAccessTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.className: loading (tried for 60 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at ViewCare.ValidateControllerRemoteAccessTest.waitForElementToDisappear(ValidateControllerRemoteAccessTest.java:39)
-	at ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess(ValidateControllerRemoteAccessTest.java:62)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace584262389", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace584262389'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.className: loading (tried for 60 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at ViewCare.ValidateControllerRemoteAccessTest.waitForElementToDisappear(ValidateControllerRemoteAccessTest.java:39)
-	at ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess(ValidateControllerRemoteAccessTest.java:62)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>64</td>
-<td>ViewCare.ValidateControllerRemoteAccessTest@78691363</td></tr>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
 <tr>
 <td title='ViewCare.EnterSalesPointTest.testValidatesNumberOfOS()'><b>testValidatesNumberOfOS</b><br>Test class: ViewCare.EnterSalesPointTest</td>
 <td><div><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
 	at ViewCare.EnterSalesPointTest.testValidatesNumberOfOS(EnterSalesPointTest.java:75)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace837719796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace837719796'><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1847559273", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1847559273'><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
@@ -242,52 +157,18 @@ Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.EnterSalesPointTest@65fb9ffc</td></tr>
+<td>ViewCare.EnterSalesPointTest@4802796d</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess()'><b>testValidateNumberOfAccess</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (600,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=22132121-76d5-4f9f-a4aa-a813d7c323bf}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(4) .simtTitle]
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
-	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess(ValidateControllerInformationTest.java:96)
+<td title='ViewCare.ValidateControllerInformationTest.testExportAccess()'><b>testExportAccess</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
+<td><div><pre>java.lang.AssertionError: Test ExportAccess: Failed, download did not start expected [true] but found [false]
+	at ViewCare.ValidateControllerInformationTest.testExportAccess(ValidateControllerInformationTest.java:121)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2065587797", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2065587797'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;a class=&quot;simtTitle&quot;&gt; is not clickable at point (600,582) because another element &lt;div class=&quot;loading&quot;&gt; obscures it
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [8932625c-5f5e-4d08-8799-cc3444e98435, clickElement {id=22132121-76d5-4f9f-a4aa-a813d7c323bf}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:39076, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 1584, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:39076/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:39076/sessio...}
-Element: [[FirefoxDriver: firefox on windows (8932625c-5f5e-4d08-8799-cc3444e98435)] -&gt; css selector: #detalhamento_controlador .cardSimtroProject:nth-of-type(4) .simtTitle]
-Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at ViewCare.ValidateControllerInformationTest.validateNumberOfElements(ValidateControllerInformationTest.java:175)
-	at ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess(ValidateControllerInformationTest.java:96)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace9539718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace9539718'><pre>java.lang.AssertionError: Test ExportAccess: Failed, download did not start expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at ViewCare.ValidateControllerInformationTest.testExportAccess(ValidateControllerInformationTest.java:121)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -315,21 +196,21 @@ Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>ViewCare.ValidateControllerInformationTest@41d477ed</td></tr>
+<td>30</td>
+<td>ViewCare.ValidateControllerInformationTest@65fb9ffc</td></tr>
 <tr>
-<td title='ViewCare.SalesPointTest.testAssertNumberOfCLients()'><b>testAssertNumberOfCLients</b><br>Test class: ViewCare.SalesPointTest</td>
-<td><div><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
-	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:152)
+<td title='ViewCare.ControllerTimeActionsTest.testDeleteTime()'><b>testDeleteTime</b><br>Test class: ViewCare.ControllerTimeActionsTest</td>
+<td><div><pre>java.lang.AssertionError: Failed to delete new time. expected [ Horário excluído com sucesso. ] but found [Horário excluído com sucesso.]
+	at ViewCare.ControllerTimeActionsTest.testDeleteTime(ControllerTimeActionsTest.java:84)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace766101", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace766101'><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace32949422", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32949422'><pre>java.lang.AssertionError: Failed to delete new time. expected [ Horário excluído com sucesso. ] but found [Horário excluído com sucesso.]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at ViewCare.SalesPointTest.testAssertNumberOfCLients(SalesPointTest.java:152)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at ViewCare.ControllerTimeActionsTest.testDeleteTime(ControllerTimeActionsTest.java:84)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -357,8 +238,8 @@ Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
+<td>7</td>
+<td>ViewCare.ControllerTimeActionsTest@3e694b3f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -368,261 +249,110 @@ Session ID: 8932625c-5f5e-4d08-8799-cc3444e98435
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='base.LoginTest.testLogin()'><b>testLogin</b><br>Test class: base.LoginTest</td>
+<td title='ViewCare.ViewCareTest.testViewCare()'><b>testViewCare</b><br>Test class: ViewCare.ViewCareTest</td>
 <td></td>
-<td>0</td>
-<td>base.LoginTest@293a5bf6</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFoundClientSalesPoint()'><b>testFoundClientSalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByID()'><b>testFilterSalesPointByID</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointBySalesPoint()'><b>testFilterSalesPointBySalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.EnterSalesPointTest.testValidateNameSalesPoint()'><b>testValidateNameSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.EnterSalesPointTest@65fb9ffc</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testOnlineEquipements()'><b>testOnlineEquipements</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByTotalEquipment()'><b>testFilterSalesPointByTotalEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByLastMessage()'><b>testFilterSalesPointByLastMessage</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
+<td>5</td>
+<td>ViewCare.ViewCareTest@3349e9bb</td></tr>
 <tr>
 <td title='ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint()'><b>testFetchListAndClickTheTestSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.EnterSalesPointTest@65fb9ffc</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByServiceOrder()'><b>testFilterSalesPointByServiceOrder</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testAssertNumberOfShowedResults()'><b>testAssertNumberOfShowedResults</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByClient()'><b>testFilterSalesPointByClient</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.EnterControllerTest.testAccessEquipmentController()'><b>testAccessEquipmentController</b><br>Test class: ViewCare.EnterControllerTest</td>
-<td></td>
-<td>1</td>
-<td>ViewCare.EnterControllerTest@1bb5a082</td></tr>
-<tr>
-<td title='ViewCare.ViewCareTest.testViewCare()'><b>testViewCare</b><br>Test class: ViewCare.ViewCareTest</td>
-<td></td>
-<td>5</td>
-<td>ViewCare.ViewCareTest@49e53c76</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByOnlineEquipment()'><b>testFilterSalesPointByOnlineEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@7b98f307</td></tr>
+<td>ViewCare.EnterSalesPointTest@4802796d</td></tr>
 <tr>
 <td title='ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController()'><b>testLastInfoFirstMonitorableIsValidController</b><br>Test class: ViewCare.EnterControllerTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.EnterControllerTest@1bb5a082</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>ViewCare.EnterControllerTest@59474f18</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerRemoteAccessTest.testGenerateRandomPassword()'><b>testGenerateRandomPassword</b><br>Test class: ViewCare.ValidateControllerRemoteAccessTest</td>
-<td><div><pre>java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testGenerateRandomPassword()[pri:3, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1625258377", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1625258377'><pre>java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testGenerateRandomPassword()[pri:3, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td title='base.LoginTest.testLogin()'><b>testLogin</b><br>Test class: base.LoginTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerRemoteAccessTest@78691363</td></tr>
+<td>base.LoginTest@7d8995e</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfBiometry()'><b>testValidateNumberOfBiometry</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
-<td><div><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfBiometry()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace483669346", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace483669346'><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfBiometry()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByID()'><b>testFilterSalesPointByID</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerInformationTest@41d477ed</td></tr>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerRemoteAccessTest.testTogglePassword()'><b>testTogglePassword</b><br>Test class: ViewCare.ValidateControllerRemoteAccessTest</td>
-<td><div><pre>java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testTogglePassword()[pri:2, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1730371851", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1730371851'><pre>java.lang.Throwable: Method ValidateControllerRemoteAccessTest.testTogglePassword()[pri:2, instance:ViewCare.ValidateControllerRemoteAccessTest@78691363] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByOnlineEquipment()'><b>testFilterSalesPointByOnlineEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerRemoteAccessTest@78691363</td></tr>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfUsers()'><b>testValidateNumberOfUsers</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
-<td><div><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfUsers()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace891328061", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace891328061'><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testValidateNumberOfUsers()[pri:2, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointBySalesPoint()'><b>testFilterSalesPointBySalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerInformationTest@41d477ed</td></tr>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
 <tr>
-<td title='ViewCare.ValidateControllerInformationTest.testExportAccess()'><b>testExportAccess</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
-<td><div><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testExportAccess()[pri:5, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace124581953", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace124581953'><pre>java.lang.Throwable: Method ValidateControllerInformationTest.testExportAccess()[pri:5, instance:ViewCare.ValidateControllerInformationTest@41d477ed] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td title='ViewCare.EnterSalesPointTest.testValidateNameSalesPoint()'><b>testValidateNameSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ValidateControllerInformationTest@41d477ed</td></tr>
+<td>ViewCare.EnterSalesPointTest@4802796d</td></tr>
 <tr>
 <td title='ViewCare.ControllerTimeActionsTest.testCreateNewTime()'><b>testCreateNewTime</b><br>Test class: ViewCare.ControllerTimeActionsTest</td>
-<td><div><pre>java.lang.Throwable: Method ControllerTimeActionsTest.testCreateNewTime()[pri:1, instance:ViewCare.ControllerTimeActionsTest@3590fc5b] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace734518153", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace734518153'><pre>java.lang.Throwable: Method ControllerTimeActionsTest.testCreateNewTime()[pri:1, instance:ViewCare.ControllerTimeActionsTest@3590fc5b] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
+<td></td>
+<td>16</td>
+<td>ViewCare.ControllerTimeActionsTest@3e694b3f</td></tr>
+<tr>
+<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfTime()'><b>testValidateNumberOfTime</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
+<td></td>
+<td>2</td>
+<td>ViewCare.ValidateControllerInformationTest@65fb9ffc</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFoundClientSalesPoint()'><b>testFoundClientSalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
 <td>0</td>
-<td>ViewCare.ControllerTimeActionsTest@3590fc5b</td></tr>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByServiceOrder()'><b>testFilterSalesPointByServiceOrder</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.EnterControllerTest.testAccessEquipmentController()'><b>testAccessEquipmentController</b><br>Test class: ViewCare.EnterControllerTest</td>
+<td></td>
+<td>2</td>
+<td>ViewCare.EnterControllerTest@59474f18</td></tr>
+<tr>
+<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfAccess()'><b>testValidateNumberOfAccess</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
+<td></td>
+<td>99</td>
+<td>ViewCare.ValidateControllerInformationTest@65fb9ffc</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByTotalEquipment()'><b>testFilterSalesPointByTotalEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testOnlineEquipements()'><b>testOnlineEquipements</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByClient()'><b>testFilterSalesPointByClient</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testAssertNumberOfShowedResults()'><b>testAssertNumberOfShowedResults</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByLastMessage()'><b>testFilterSalesPointByLastMessage</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@77888435</td></tr>
+<tr>
+<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfUsers()'><b>testValidateNumberOfUsers</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
+<td></td>
+<td>48</td>
+<td>ViewCare.ValidateControllerInformationTest@65fb9ffc</td></tr>
+<tr>
+<td title='ViewCare.ValidateControllerInformationTest.testValidateNumberOfBiometry()'><b>testValidateNumberOfBiometry</b><br>Test class: ViewCare.ValidateControllerInformationTest</td>
+<td></td>
+<td>23</td>
+<td>ViewCare.ValidateControllerInformationTest@65fb9ffc</td></tr>
 </table><p>
 </body>
 </html>

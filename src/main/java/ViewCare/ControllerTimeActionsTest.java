@@ -34,7 +34,10 @@ public class ControllerTimeActionsTest extends BaseTest {
     private static final By MODAL_START_TIME_INPUT = By.id("controlador_horario_inicio");
     private static final By MODAL_END_TIME_INPUT = By.id("controlador_horario_fim");
     private static final By EVERY_DAY_AVAILABLE = By.cssSelector(".modal-body .row:nth-of-type(5) div:nth-of-type(4) label");
-
+    
+    private static final By DELETE_TIME_BUTTON = By.cssSelector("#botoes_horarios_controlador .simtro-text-button:nth-of-type(2)");
+    private static final By DELETE_TIME_SELECT = By.cssSelector("#controlador_horario_deletar");
+    private static final By CONFIRM_DELETE_TIME_BUTTON = By.cssSelector("#myModalExcluirHorarioControlador .modal-footer a:nth-of-type(2)");
     @Override
     protected void waitForElementToDisappear(By locator) {
         new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.invisibilityOfElementLocated(locator));
@@ -66,6 +69,26 @@ public class ControllerTimeActionsTest extends BaseTest {
         System.out.println("TEST testCreateNewTime: passed");
     }
 
+    @Test(priority = 2, dependsOnMethods = {"testCreateNewTime"})
+    public void testDeleteTime() {
+       
+    	clickButton(DELETE_TIME_BUTTON);
+    	
+    	selectDropdownOptionOnText(DELETE_TIME_SELECT, NEW_TIME_CREATED_NAME);
+    	
+    	clickButton(CONFIRM_DELETE_TIME_BUTTON);
+    	
+        waitForElement(LOADING_SPINNER);
+        waitForElementToDisappear(LOADING_SPINNER);
+        
+        Assert.assertEquals(waitForElement(INFO_MESSAGE).getText(), "Horário excluído com sucesso.", "Failed to delete new time.");
+        
+        driver.findElement(MODAL_CONFIRM_BUTTON).click();
+    	
+        System.out.println("TEST testDeleteTime: passed");
+    }
+    
+    
     private void navigateToControllerTimes() {
         WebElement controllerTimes = driver.findElement(CONTROLLER_TIMES_CARD);
         scrollIntoView(controllerTimes);
@@ -75,8 +98,7 @@ public class ControllerTimeActionsTest extends BaseTest {
     private void handleModal(WebElement createTimeButton, By closeButtonLocator, boolean useFooter) {
         createTimeButton.click();
         waitForElement(MODAL_CONTENT);
-        WebElement closeButton = driver.findElement(closeButtonLocator);
-        closeButton.click();
+        clickButton(closeButtonLocator);
         waitForElementToDisappear(MODAL_CONTENT);
     }
 
@@ -97,7 +119,7 @@ public class ControllerTimeActionsTest extends BaseTest {
         waitForElementToDisappear(LOADING_SPINNER);
 
         Assert.assertEquals(waitForElement(INFO_MESSAGE).getText(), "Horário Cadastrado com sucesso.", "Failed to save new time.");
-
+        
         driver.findElement(MODAL_CONFIRM_BUTTON).click();
     }
 

@@ -39,22 +39,22 @@ public class ValidateControllerInformationTest extends BaseTest {
     private static final String ACCESS_CARD_SELECTOR = "#detalhamento_controlador .cardSimtroProject:nth-of-type(4) .simtTitle";
     private static final String ACCESS_TABLE_SELECTOR = "#listagem_acessos_controlador #table_acessos_controlador";
 
-    private static final String EXPORT_BUTTON_SELECTOR = "#acessos_equipamento div:nth-of-type(6) button:nth-of-type(1)";
-    private static final String EXPORT_CLOSE_BUTTON_SELECTOR = "#myModal .simtro-text-button-alternative";
+    private static final By EXPORT_BUTTON_SELECTOR = By.cssSelector("#acessos_equipamento div:nth-of-type(6) button:nth-of-type(1)");
+    private static final By EXPORT_CLOSE_BUTTON_SELECTOR = By.cssSelector("#myModal .simtro-text-button-alternative");
 
-    private static final String DATE_START_SELECTOR = "#data_inicial_acessos_controlador";
-    private static final String DATE_END_SELECTOR = "#data_final_acessos_controlador";
-    private static final String FILTER_BUTTON_SELECTOR = "#acessos_equipamento div:nth-of-type(6) button:nth-of-type(2)";
-    private static final String FILTER_USER_SELECTOR = "#filtra_usuario_controlador";
-    private static final String FILTER_TIME_SELECTOR = "#filtra_horario_controlador";
+    private static final By DATE_START_SELECTOR = By.cssSelector("#data_inicial_acessos_controlador");
+    private static final By DATE_END_SELECTOR = By.cssSelector("#data_final_acessos_controlador");
+    private static final By FILTER_BUTTON_SELECTOR = By.cssSelector("#acessos_equipamento div:nth-of-type(6) button:nth-of-type(2)");
+    private static final By FILTER_USER_SELECTOR = By.cssSelector("#filtra_usuario_controlador");
+    private static final By FILTER_TIME_SELECTOR = By.cssSelector("#filtra_horario_controlador");
 
     @Override
     protected void waitForElementToDisappear(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, TIMEOUT);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
-    @Test(priority = 2, dependsOnMethods = {"ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess"})
-   // @Test(priority = 2, dependsOnMethods = {"ViewCare.EnterControllerTest.testAccessEquipmentController"})
+    //@Test(priority = 2, dependsOnMethods = {"ViewCare.ValidateControllerRemoteAccessTest.testTryRemoteAccess"})
+    @Test(priority = 2, dependsOnMethods = {"ViewCare.EnterControllerTest.testAccessEquipmentController"})
     public void testValidateNumberOfUsers() {
         System.out.println("\n---------------CONTROLLER INFO---------------\n");
         validateNumberOfElements(
@@ -114,10 +114,9 @@ public class ValidateControllerInformationTest extends BaseTest {
 
     @Test(priority = 5, dependsOnMethods = {"testValidateNumberOfAccess"})
     public void testExportAccess() {
-        boolean didItStart = verifyDownloadStarted(By.cssSelector(EXPORT_BUTTON_SELECTOR));
+        boolean didItStart = verifyDownloadStarted(EXPORT_BUTTON_SELECTOR);
 
-        WebElement exportCloseButton = driver.findElement(By.cssSelector(EXPORT_CLOSE_BUTTON_SELECTOR));
-        exportCloseButton.click();
+        clickButton(EXPORT_CLOSE_BUTTON_SELECTOR);
 
         Assert.assertTrue(didItStart, "Test ExportAccess: Failed, download did not start");
         System.out.println("TEST testExportAccess: passed");
@@ -145,18 +144,11 @@ public class ValidateControllerInformationTest extends BaseTest {
     }
 
     private void setDateFilter(String startDate, String endDate) {
-        driver.findElement(By.cssSelector(DATE_START_SELECTOR)).sendKeys(startDate);
-        driver.findElement(By.cssSelector(DATE_END_SELECTOR)).sendKeys(endDate);
+        driver.findElement(DATE_START_SELECTOR).sendKeys(startDate);
+        driver.findElement(DATE_END_SELECTOR).sendKeys(endDate);
     }
 
-    private void clickButton(String selector) {
-        driver.findElement(By.cssSelector(selector)).click();
-    }
-
-    private void selectDropdownOption(String selector, String value) {
-        WebElement dropdown = driver.findElement(By.cssSelector(selector));
-        new Select(dropdown).selectByValue(value);
-    }
+   
 
     private void validateRows(String rowsSelector, int expectedSize, String emptyMessage, String sizeMessage) {
         List<WebElement> rows = waitForElements(By.cssSelector(rowsSelector + " tr"));

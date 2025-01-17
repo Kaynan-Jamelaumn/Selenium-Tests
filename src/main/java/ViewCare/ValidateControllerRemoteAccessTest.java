@@ -56,15 +56,13 @@ public class ValidateControllerRemoteAccessTest extends BaseTest {
             driver.findElement(REMOTE_ACCESS_BUTTON).click();
             WebElement motiveInput = waitForElement(REMOTE_ACCESS_REASON);
             motiveInput.sendKeys("teste automatizado");
-            WebElement button = driver.findElement(REMOTE_ACCESS_CONFIRM_BUTTON);
-            button.click();
+            clickButton(REMOTE_ACCESS_CONFIRM_BUTTON);
             waitForElement(LOADING_SPINNER);
             waitForElementToDisappear(LOADING_SPINNER);
             WebElement info = waitForElement(INFO_MESSAGE);
             Assert.assertEquals(info.getText().trim(), "Controlador aberto com sucesso.",
                     "Error: Controller did not properly remotely open");
-            WebElement closeButton = waitForElement(MODAL_CLOSE_BUTTON);
-            closeButton.click();
+            clickButton(MODAL_CLOSE_BUTTON);
         } else {
             Assert.assertNull(controllerAccessButton,
                     "Should not be able to remotely access this type of controller");
@@ -103,8 +101,7 @@ public class ValidateControllerRemoteAccessTest extends BaseTest {
         Assert.assertEquals(generatedText.getText().trim(), "Senha randômica gerada com sucesso.",
                 "Unexpected error while generating password.");
 
-        WebElement closeButton = waitForElement(MODAL_CLOSE_BUTTON);
-        closeButton.click();
+        clickButton(MODAL_CLOSE_BUTTON);
 
         clickAndWait(toggleButton, 1000);
         String newPassword = getPasswordLabel();
