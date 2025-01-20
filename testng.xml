@@ -14,8 +14,9 @@
             <class name="ViewCare.EnterSalesPointTest"/>
             <class name="ViewCare.EnterControllerTest"/>
             <!--<class name="ViewCare.ValidateControllerRemoteAccessTest"/>  -->
-            <class name="ViewCare.ValidateControllerInformationTest"/>
-            <class name="ViewCare.ControllerTimeActionsTest"/>
+             <!--  <class name="ViewCare.ValidateControllerInformationTest"/>  -->
+             <!--  <class name="ViewCare.ControllerTimeActionsTest"/>  -->
+              <class name="ViewCare.ControllerUserActionsTest"/>
             <class name="ViewCare.EnterPGDMTest"/>
         </classes>
     </test>

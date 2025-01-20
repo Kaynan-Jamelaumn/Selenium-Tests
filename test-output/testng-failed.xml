@@ -3,14 +3,6 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AllTests(failed)">
     <classes>
-      <class name="ViewCare.EnterControllerTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testAccessEquipmentController"/>
-          <include name="testLastInfoFirstMonitorableIsValidController"/>
-        </methods>
-      </class> <!-- ViewCare.EnterControllerTest -->
       <class name="base.LoginTest">
         <methods>
           <include name="setUp"/>
@@ -18,14 +10,6 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- base.LoginTest -->
-      <class name="ViewCare.ControllerTimeActionsTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testCreateNewTime"/>
-          <include name="testDeleteTime"/>
-        </methods>
-      </class> <!-- ViewCare.ControllerTimeActionsTest -->
       <class name="ViewCare.SalesPointTest">
         <methods>
           <include name="setUp"/>
@@ -42,14 +26,6 @@
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.EnterSalesPointTest -->
-      <class name="ViewCare.ValidateControllerInformationTest">
-        <methods>
-          <include name="testValidateNumberOfAccess"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testExportAccess"/>
-        </methods>
-      </class> <!-- ViewCare.ValidateControllerInformationTest -->
       <class name="ViewCare.ViewCareTest">
         <methods>
           <include name="setUp"/>

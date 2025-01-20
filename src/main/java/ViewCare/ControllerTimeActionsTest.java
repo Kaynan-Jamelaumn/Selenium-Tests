@@ -126,7 +126,7 @@ public class ControllerTimeActionsTest extends BaseTest {
     private void fillModalInput(WebElement modalContent, WebElement addTimeButton, By inputId, String value, String validationMessage) {
         addTimeButton.click();
         Assert.assertEquals(waitForElement(INFO_MESSAGE).getText(), validationMessage, "Validation message mismatch.");
-        driver.findElement(MODAL_CONFIRM_BUTTON).click();
+        clickButton(MODAL_CONFIRM_BUTTON);
 
         modalContent.findElement(inputId).sendKeys(value);
     }
