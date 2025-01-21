@@ -1,69 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="22" passed="14" failed="3" skipped="5">
+<testng-results ignored="0" total="23" passed="16" failed="4" skipped="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-21T11:32:20 BRT" name="Suite" finished-at="2025-01-21T11:32:52 BRT" duration-ms="32437">
+  <suite started-at="2025-01-21T13:42:50 BRT" name="Suite" finished-at="2025-01-21T13:45:14 BRT" duration-ms="144522">
     <groups>
     </groups>
-    <test started-at="2025-01-21T11:32:20 BRT" name="Renew" finished-at="2025-01-21T11:32:20 BRT" duration-ms="8">
+    <test started-at="2025-01-21T13:42:50 BRT" name="Renew" finished-at="2025-01-21T13:42:50 BRT" duration-ms="8">
     </test> <!-- Renew -->
-    <test started-at="2025-01-21T11:32:20 BRT" name="AllTests" finished-at="2025-01-21T11:32:52 BRT" duration-ms="32357">
+    <test started-at="2025-01-21T13:42:50 BRT" name="AllTests" finished-at="2025-01-21T13:45:14 BRT" duration-ms="144459">
       <class name="base.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:base.LoginTest@1bd4fdd]" started-at="2025-01-21T11:32:20 BRT" name="setUp" finished-at="2025-01-21T11:32:40 BRT" duration-ms="20677" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:base.LoginTest@55183b20]" started-at="2025-01-21T13:42:50 BRT" name="setUp" finished-at="2025-01-21T13:43:01 BRT" duration-ms="11288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLogin()[pri:1, instance:base.LoginTest@1bd4fdd]" started-at="2025-01-21T11:32:40 BRT" name="testLogin" finished-at="2025-01-21T11:32:41 BRT" duration-ms="874" status="PASS">
+        <test-method signature="testLogin()[pri:1, instance:base.LoginTest@55183b20]" started-at="2025-01-21T13:43:01 BRT" name="testLogin" finished-at="2025-01-21T13:43:02 BRT" duration-ms="754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.LoginTest@1bd4fdd]" started-at="2025-01-21T11:32:41 BRT" name="tearDown" finished-at="2025-01-21T11:32:41 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.LoginTest@55183b20]" started-at="2025-01-21T13:43:02 BRT" name="tearDown" finished-at="2025-01-21T13:43:02 BRT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- base.LoginTest -->
       <class name="ViewCare.SalesPointTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:48 BRT" name="setUp" finished-at="2025-01-21T11:32:48 BRT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:08 BRT" name="setUp" finished-at="2025-01-21T13:43:08 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testOnlineEquipements()[pri:1, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:48 BRT" name="testOnlineEquipements" finished-at="2025-01-21T11:32:49 BRT" depends-on-methods="ViewCare.ViewCareTest.testViewCare" duration-ms="650" status="PASS">
+        <test-method signature="testOnlineEquipements()[pri:1, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:08 BRT" name="testOnlineEquipements" finished-at="2025-01-21T13:43:08 BRT" depends-on-methods="ViewCare.ViewCareTest.testViewCare" duration-ms="649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOnlineEquipements -->
-        <test-method signature="testFoundClientSalesPoint()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:49 BRT" name="testFoundClientSalesPoint" finished-at="2025-01-21T11:32:49 BRT" depends-on-methods="ViewCare.ViewCareTest.testViewCare" duration-ms="265" status="PASS">
+        <test-method signature="testAssertNumberOfEquipments()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:08 BRT" name="testAssertNumberOfEquipments" finished-at="2025-01-21T13:43:08 BRT" depends-on-methods="ViewCare.ViewCareTest.testViewCare" duration-ms="87" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Number of Equipments Did'nt match, the number from the card and the info contained in the table differ expected [4] but found [13]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Number of Equipments Did'nt match, the number from the card and the info contained in the table differ expected [4] but found [13]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at ViewCare.SalesPointTest.testAssertNumberOfEquipments(SalesPointTest.java:107)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAssertNumberOfEquipments -->
+        <test-method signature="testFoundClientSalesPoint()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:08 BRT" name="testFoundClientSalesPoint" finished-at="2025-01-21T13:43:09 BRT" depends-on-methods="ViewCare.ViewCareTest.testViewCare" duration-ms="260" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFoundClientSalesPoint -->
-        <test-method signature="testFilterSalesPointByClient()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:49 BRT" name="testFilterSalesPointByClient" finished-at="2025-01-21T11:32:49 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="354" status="PASS">
+        <test-method signature="testFilterSalesPointByClient()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:09 BRT" name="testFilterSalesPointByClient" finished-at="2025-01-21T13:43:09 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByClient -->
-        <test-method signature="testFilterSalesPointByID()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:49 BRT" name="testFilterSalesPointByID" finished-at="2025-01-21T11:32:50 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="330" status="PASS">
+        <test-method signature="testFilterSalesPointByID()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:09 BRT" name="testFilterSalesPointByID" finished-at="2025-01-21T13:43:09 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByID -->
-        <test-method signature="testFilterSalesPointByLastMessage()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:50 BRT" name="testFilterSalesPointByLastMessage" finished-at="2025-01-21T11:32:50 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="326" status="PASS">
+        <test-method signature="testFilterSalesPointByLastMessage()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:09 BRT" name="testFilterSalesPointByLastMessage" finished-at="2025-01-21T13:43:10 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByLastMessage -->
-        <test-method signature="testFilterSalesPointByOnlineEquipment()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:50 BRT" name="testFilterSalesPointByOnlineEquipment" finished-at="2025-01-21T11:32:50 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="328" status="PASS">
+        <test-method signature="testFilterSalesPointByOnlineEquipment()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:10 BRT" name="testFilterSalesPointByOnlineEquipment" finished-at="2025-01-21T13:43:10 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByOnlineEquipment -->
-        <test-method signature="testFilterSalesPointBySalesPoint()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:50 BRT" name="testFilterSalesPointBySalesPoint" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="321" status="PASS">
+        <test-method signature="testFilterSalesPointBySalesPoint()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:10 BRT" name="testFilterSalesPointBySalesPoint" finished-at="2025-01-21T13:43:10 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointBySalesPoint -->
-        <test-method signature="testFilterSalesPointByServiceOrder()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:51 BRT" name="testFilterSalesPointByServiceOrder" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="309" status="PASS">
+        <test-method signature="testFilterSalesPointByServiceOrder()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:10 BRT" name="testFilterSalesPointByServiceOrder" finished-at="2025-01-21T13:43:11 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByServiceOrder -->
-        <test-method signature="testFilterSalesPointByTotalEquipment()[pri:2, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:51 BRT" name="testFilterSalesPointByTotalEquipment" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="324" status="PASS">
+        <test-method signature="testFilterSalesPointByTotalEquipment()[pri:2, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:11 BRT" name="testFilterSalesPointByTotalEquipment" finished-at="2025-01-21T13:43:11 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSalesPointByTotalEquipment -->
-        <test-method signature="testAssertNumberOfSalesPoints()[pri:3, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:51 BRT" name="testAssertNumberOfSalesPoints" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="41" status="FAIL">
+        <test-method signature="testAssertNumberOfSalesPoints()[pri:3, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:11 BRT" name="testAssertNumberOfSalesPoints" finished-at="2025-01-21T13:43:11 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="71" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]]]>
@@ -75,7 +119,7 @@ at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:907)
-at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:152)
+at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:173)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -108,184 +152,52 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAssertNumberOfSalesPoints -->
-        <test-method signature="testAssertNumberOfShowedResults()[pri:3, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:51 BRT" name="testAssertNumberOfShowedResults" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="34" status="PASS">
+        <test-method signature="testAssertNumberOfShowedResults()[pri:3, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:11 BRT" name="testAssertNumberOfShowedResults" finished-at="2025-01-21T13:43:11 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAssertNumberOfShowedResults -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.SalesPointTest@5656be13]" started-at="2025-01-21T11:32:51 BRT" name="tearDown" finished-at="2025-01-21T11:32:51 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.SalesPointTest@4218d6a3]" started-at="2025-01-21T13:43:11 BRT" name="tearDown" finished-at="2025-01-21T13:43:11 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ViewCare.SalesPointTest -->
       <class name="ViewCare.ViewCareTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.ViewCareTest@1283bb96]" started-at="2025-01-21T11:32:41 BRT" name="setUp" finished-at="2025-01-21T11:32:41 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.ViewCareTest@74f0ea28]" started-at="2025-01-21T13:43:02 BRT" name="setUp" finished-at="2025-01-21T13:43:02 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testViewCare()[pri:1, instance:ViewCare.ViewCareTest@1283bb96]" started-at="2025-01-21T11:32:41 BRT" name="testViewCare" finished-at="2025-01-21T11:32:48 BRT" depends-on-methods="base.LoginTest.testLogin" duration-ms="6550" status="PASS">
+        <test-method signature="testViewCare()[pri:1, instance:ViewCare.ViewCareTest@74f0ea28]" started-at="2025-01-21T13:43:02 BRT" name="testViewCare" finished-at="2025-01-21T13:43:08 BRT" depends-on-methods="base.LoginTest.testLogin" duration-ms="5588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testViewCare -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.ViewCareTest@1283bb96]" started-at="2025-01-21T11:32:48 BRT" name="tearDown" finished-at="2025-01-21T11:32:48 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.ViewCareTest@74f0ea28]" started-at="2025-01-21T13:43:08 BRT" name="tearDown" finished-at="2025-01-21T13:43:08 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ViewCare.ViewCareTest -->
       <class name="ViewCare.ControllerUserActionsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="setUp" finished-at="2025-01-21T11:32:52 BRT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="testCreateNewUser" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.EnterControllerTest.testAccessEquipmentController" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
+        <test-method signature="testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:43:14 BRT" name="testCreateNewUser" finished-at="2025-01-21T13:45:14 BRT" depends-on-methods="ViewCare.EnterControllerTest.testAccessEquipmentController" duration-ms="120458" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Method ControllerUserActionsTest.testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods]]>
+              <![CDATA[Expected condition failed: waiting for element to no longer be visible: By.cssSelector: .loading (tried for 120 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:13796, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24048, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:13796/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:13796/sessio...}
+Session ID: f0470d00-5064-4cfa-94c7-02b70bbec25b]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateNewUser -->
-        <test-method signature="testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="testUpdateUser" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testCreateNewUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateUser -->
-        <test-method signature="testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="testCreateUserPassword" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testUpdateUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateUserPassword -->
-        <test-method signature="testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="testDeleteUser" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testCreateNewUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.ControllerUserActionsTest@7b98f307]" started-at="2025-01-21T11:32:52 BRT" name="tearDown" finished-at="2025-01-21T11:32:52 BRT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- ViewCare.ControllerUserActionsTest -->
-      <class name="ViewCare.EnterControllerTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.EnterControllerTest@71d44a3]" started-at="2025-01-21T11:32:52 BRT" name="setUp" finished-at="2025-01-21T11:32:52 BRT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testLastInfoFirstMonitorableIsValidController()[pri:1, instance:ViewCare.EnterControllerTest@71d44a3]" started-at="2025-01-21T11:32:52 BRT" name="testLastInfoFirstMonitorableIsValidController" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="554" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The time difference is more than 6 minutes. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The time difference is more than 6 minutes. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at ViewCare.BaseEquipmentTest.validateLastInfo(BaseEquipmentTest.java:48)
-at ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController(EnterControllerTest.java:20)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.cssSelector: .loading (tried for 120 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:13796, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24048, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:13796/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:13796/sessio...}
+Session ID: f0470d00-5064-4cfa-94c7-02b70bbec25b
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at ViewCare.ControllerUserActionsTest.waitForElementToDisappear(ControllerUserActionsTest.java:73)
+at ViewCare.ControllerUserActionsTest.navigateToControllerUser(ControllerUserActionsTest.java:286)
+at ViewCare.ControllerUserActionsTest.testCreateNewUser(ControllerUserActionsTest.java:80)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -314,17 +226,21 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLastInfoFirstMonitorableIsValidController -->
-        <test-method signature="testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@71d44a3]" started-at="2025-01-21T11:32:52 BRT" name="testAccessEquipmentController" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController" duration-ms="0" status="SKIP">
+        </test-method> <!-- testCreateNewUser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:43:14 BRT" name="setUp" finished-at="2025-01-21T13:43:14 BRT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:45:14 BRT" name="testUpdateUser" finished-at="2025-01-21T13:45:14 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testCreateNewUser" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method EnterControllerTest.testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@71d44a3] depends on not successfully finished methods]]>
+              <![CDATA[Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method EnterControllerTest.testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@71d44a3] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -349,26 +265,108 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- testUpdateUser -->
+        <test-method signature="testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:45:14 BRT" name="testCreateUserPassword" finished-at="2025-01-21T13:45:14 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testUpdateUser" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUserPassword -->
+        <test-method signature="testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:45:14 BRT" name="testDeleteUser" finished-at="2025-01-21T13:45:14 BRT" depends-on-methods="ViewCare.ControllerUserActionsTest.testCreateNewUser" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.ControllerUserActionsTest@4802796d]" started-at="2025-01-21T13:45:14 BRT" name="tearDown" finished-at="2025-01-21T13:45:14 BRT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ViewCare.ControllerUserActionsTest -->
+      <class name="ViewCare.EnterControllerTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.EnterControllerTest@7b98f307]" started-at="2025-01-21T13:43:12 BRT" name="setUp" finished-at="2025-01-21T13:43:12 BRT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLastInfoFirstMonitorableIsValidController()[pri:1, instance:ViewCare.EnterControllerTest@7b98f307]" started-at="2025-01-21T13:43:12 BRT" name="testLastInfoFirstMonitorableIsValidController" finished-at="2025-01-21T13:43:12 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLastInfoFirstMonitorableIsValidController -->
+        <test-method signature="testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@7b98f307]" started-at="2025-01-21T13:43:12 BRT" name="testAccessEquipmentController" finished-at="2025-01-21T13:43:14 BRT" depends-on-methods="ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController" duration-ms="1865" status="PASS">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- testAccessEquipmentController -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.EnterControllerTest@71d44a3]" started-at="2025-01-21T11:32:52 BRT" name="tearDown" finished-at="2025-01-21T11:32:52 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.EnterControllerTest@7b98f307]" started-at="2025-01-21T13:43:14 BRT" name="tearDown" finished-at="2025-01-21T13:43:14 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- ViewCare.EnterControllerTest -->
       <class name="ViewCare.EnterSalesPointTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.EnterSalesPointTest@77888435]" started-at="2025-01-21T11:32:51 BRT" name="setUp" finished-at="2025-01-21T11:32:51 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ViewCare.EnterSalesPointTest@73a1e9a9]" started-at="2025-01-21T13:43:11 BRT" name="setUp" finished-at="2025-01-21T13:43:11 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testFetchListAndClickTheTestSalesPoint()[pri:1, instance:ViewCare.EnterSalesPointTest@77888435]" started-at="2025-01-21T11:32:51 BRT" name="testFetchListAndClickTheTestSalesPoint" finished-at="2025-01-21T11:32:51 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="267" status="PASS">
+        <test-method signature="testFetchListAndClickTheTestSalesPoint()[pri:1, instance:ViewCare.EnterSalesPointTest@73a1e9a9]" started-at="2025-01-21T13:43:11 BRT" name="testFetchListAndClickTheTestSalesPoint" finished-at="2025-01-21T13:43:11 BRT" depends-on-methods="ViewCare.SalesPointTest.testFoundClientSalesPoint" duration-ms="283" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFetchListAndClickTheTestSalesPoint -->
-        <test-method signature="testValidateNameSalesPoint()[pri:2, instance:ViewCare.EnterSalesPointTest@77888435]" started-at="2025-01-21T11:32:51 BRT" name="testValidateNameSalesPoint" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="52" status="PASS">
+        <test-method signature="testValidateNameSalesPoint()[pri:2, instance:ViewCare.EnterSalesPointTest@73a1e9a9]" started-at="2025-01-21T13:43:11 BRT" name="testValidateNameSalesPoint" finished-at="2025-01-21T13:43:12 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidateNameSalesPoint -->
-        <test-method signature="testValidatesNumberOfOS()[pri:2, instance:ViewCare.EnterSalesPointTest@77888435]" started-at="2025-01-21T11:32:52 BRT" name="testValidatesNumberOfOS" finished-at="2025-01-21T11:32:52 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="20" status="FAIL">
+        <test-method signature="testValidatesNumberOfOS()[pri:2, instance:ViewCare.EnterSalesPointTest@73a1e9a9]" started-at="2025-01-21T13:43:12 BRT" name="testValidatesNumberOfOS" finished-at="2025-01-21T13:43:12 BRT" depends-on-methods="ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint" duration-ms="24" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[OS Number Does Not Match expected [2] but found [0]]]>
@@ -413,7 +411,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidatesNumberOfOS -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.EnterSalesPointTest@77888435]" started-at="2025-01-21T11:32:52 BRT" name="tearDown" finished-at="2025-01-21T11:32:52 BRT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ViewCare.EnterSalesPointTest@73a1e9a9]" started-at="2025-01-21T13:43:12 BRT" name="tearDown" finished-at="2025-01-21T13:43:12 BRT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

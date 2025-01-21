@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>AllTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>14/3/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>16/4/3</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 21 11:32:20 BRT 2025</td>
+<td>Started on:</td><td>Tue Jan 21 13:42:50 BRT 2025</td>
 </tr>
-<tr><td>Total time:</td><td>32 seconds (32357 ms)</td>
+<tr><td>Total time:</td><td>144 seconds (144459 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,31 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ViewCare.SalesPointTest.testAssertNumberOfSalesPoints()'><b>testAssertNumberOfSalesPoints</b><br>Test class: ViewCare.SalesPointTest</td>
-<td><div><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
-	at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:152)
+<td title='ViewCare.ControllerUserActionsTest.testCreateNewUser()'><b>testCreateNewUser</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.cssSelector: .loading (tried for 120 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:13796, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24048, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:13796/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:13796/sessio...}
+Session ID: f0470d00-5064-4cfa-94c7-02b70bbec25b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ViewCare.ControllerUserActionsTest.waitForElementToDisappear(ControllerUserActionsTest.java:73)
+	at ViewCare.ControllerUserActionsTest.navigateToControllerUser(ControllerUserActionsTest.java:286)
+	at ViewCare.ControllerUserActionsTest.testCreateNewUser(ControllerUserActionsTest.java:80)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1956598686", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1956598686'><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:152)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1514431685", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1514431685'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.cssSelector: .loading (tried for 120 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 134.0.1, moz:accessibilityChecks: false, moz:buildID: 20250113121357, moz:debuggerAddress: 127.0.0.1:13796, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24048, moz:profile: C:\Users\ENRICK~1.HIP\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:13796/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webSocketUrl: ws://127.0.0.1:13796/sessio...}
+Session ID: f0470d00-5064-4cfa-94c7-02b70bbec25b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at ViewCare.ControllerUserActionsTest.waitForElementToDisappear(ControllerUserActionsTest.java:73)
+	at ViewCare.ControllerUserActionsTest.navigateToControllerUser(ControllerUserActionsTest.java:286)
+	at ViewCare.ControllerUserActionsTest.testCreateNewUser(ControllerUserActionsTest.java:80)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -114,57 +127,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController()'><b>testLastInfoFirstMonitorableIsValidController</b><br>Test class: ViewCare.EnterControllerTest</td>
-<td><div><pre>java.lang.AssertionError: The time difference is more than 6 minutes. expected [true] but found [false]
-	at ViewCare.BaseEquipmentTest.validateLastInfo(BaseEquipmentTest.java:48)
-	at ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController(EnterControllerTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1711105800", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1711105800'><pre>java.lang.AssertionError: The time difference is more than 6 minutes. expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at ViewCare.BaseEquipmentTest.validateLastInfo(BaseEquipmentTest.java:48)
-	at ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController(EnterControllerTest.java:20)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>ViewCare.EnterControllerTest@71d44a3</td></tr>
+<td>120</td>
+<td>ViewCare.ControllerUserActionsTest@4802796d</td></tr>
 <tr>
 <td title='ViewCare.EnterSalesPointTest.testValidatesNumberOfOS()'><b>testValidatesNumberOfOS</b><br>Test class: ViewCare.EnterSalesPointTest</td>
 <td><div><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
 	at ViewCare.EnterSalesPointTest.testValidatesNumberOfOS(EnterSalesPointTest.java:75)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace499951827", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace499951827'><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1732261462", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1732261462'><pre>java.lang.AssertionError: OS Number Does Not Match expected [2] but found [0]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
@@ -199,7 +170,90 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.EnterSalesPointTest@77888435</td></tr>
+<td>ViewCare.EnterSalesPointTest@73a1e9a9</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testAssertNumberOfEquipments()'><b>testAssertNumberOfEquipments</b><br>Test class: ViewCare.SalesPointTest</td>
+<td><div><pre>java.lang.AssertionError: Number of Equipments Did&apos;nt match, the number from the card and the info contained in the table differ expected [4] but found [13]
+	at ViewCare.SalesPointTest.testAssertNumberOfEquipments(SalesPointTest.java:107)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace732597634", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace732597634'><pre>java.lang.AssertionError: Number of Equipments Did&apos;nt match, the number from the card and the info contained in the table differ expected [4] but found [13]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at ViewCare.SalesPointTest.testAssertNumberOfEquipments(SalesPointTest.java:107)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testAssertNumberOfSalesPoints()'><b>testAssertNumberOfSalesPoints</b><br>Test class: ViewCare.SalesPointTest</td>
+<td><div><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
+	at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:173)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1360440329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1360440329'><pre>java.lang.AssertionError: Number of Shown Sales Points And Number of Sales Points Are Different expected [3] but found [4]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:907)
+	at ViewCare.SalesPointTest.testAssertNumberOfSalesPoints(SalesPointTest.java:173)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -212,72 +266,82 @@ function toggleAllBoxes() {
 <td title='ViewCare.EnterSalesPointTest.testValidateNameSalesPoint()'><b>testValidateNameSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.EnterSalesPointTest@77888435</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFoundClientSalesPoint()'><b>testFoundClientSalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointBySalesPoint()'><b>testFilterSalesPointBySalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
+<td>ViewCare.EnterSalesPointTest@73a1e9a9</td></tr>
 <tr>
 <td title='ViewCare.SalesPointTest.testAssertNumberOfShowedResults()'><b>testAssertNumberOfShowedResults</b><br>Test class: ViewCare.SalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testOnlineEquipements()'><b>testOnlineEquipements</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='base.LoginTest.testLogin()'><b>testLogin</b><br>Test class: base.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>base.LoginTest@1bd4fdd</td></tr>
-<tr>
-<td title='ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint()'><b>testFetchListAndClickTheTestSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.EnterSalesPointTest@77888435</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByOnlineEquipment()'><b>testFilterSalesPointByOnlineEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
 <tr>
 <td title='ViewCare.SalesPointTest.testFilterSalesPointByID()'><b>testFilterSalesPointByID</b><br>Test class: ViewCare.SalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='ViewCare.ViewCareTest.testViewCare()'><b>testViewCare</b><br>Test class: ViewCare.ViewCareTest</td>
-<td></td>
-<td>6</td>
-<td>ViewCare.ViewCareTest@1283bb96</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByLastMessage()'><b>testFilterSalesPointByLastMessage</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
-<tr>
-<td title='ViewCare.SalesPointTest.testFilterSalesPointByServiceOrder()'><b>testFilterSalesPointByServiceOrder</b><br>Test class: ViewCare.SalesPointTest</td>
-<td></td>
-<td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
 <tr>
 <td title='ViewCare.SalesPointTest.testFilterSalesPointByTotalEquipment()'><b>testFilterSalesPointByTotalEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.EnterControllerTest.testLastInfoFirstMonitorableIsValidController()'><b>testLastInfoFirstMonitorableIsValidController</b><br>Test class: ViewCare.EnterControllerTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.EnterControllerTest@7b98f307</td></tr>
+<tr>
+<td title='ViewCare.EnterControllerTest.testAccessEquipmentController()'><b>testAccessEquipmentController</b><br>Test class: ViewCare.EnterControllerTest</td>
+<td></td>
+<td>1</td>
+<td>ViewCare.EnterControllerTest@7b98f307</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFoundClientSalesPoint()'><b>testFoundClientSalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointBySalesPoint()'><b>testFilterSalesPointBySalesPoint</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testOnlineEquipements()'><b>testOnlineEquipements</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='base.LoginTest.testLogin()'><b>testLogin</b><br>Test class: base.LoginTest</td>
+<td></td>
+<td>0</td>
+<td>base.LoginTest@55183b20</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByOnlineEquipment()'><b>testFilterSalesPointByOnlineEquipment</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.ViewCareTest.testViewCare()'><b>testViewCare</b><br>Test class: ViewCare.ViewCareTest</td>
+<td></td>
+<td>5</td>
+<td>ViewCare.ViewCareTest@74f0ea28</td></tr>
 <tr>
 <td title='ViewCare.SalesPointTest.testFilterSalesPointByClient()'><b>testFilterSalesPointByClient</b><br>Test class: ViewCare.SalesPointTest</td>
 <td></td>
 <td>0</td>
-<td>ViewCare.SalesPointTest@5656be13</td></tr>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByLastMessage()'><b>testFilterSalesPointByLastMessage</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.SalesPointTest.testFilterSalesPointByServiceOrder()'><b>testFilterSalesPointByServiceOrder</b><br>Test class: ViewCare.SalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.SalesPointTest@4218d6a3</td></tr>
+<tr>
+<td title='ViewCare.EnterSalesPointTest.testFetchListAndClickTheTestSalesPoint()'><b>testFetchListAndClickTheTestSalesPoint</b><br>Test class: ViewCare.EnterSalesPointTest</td>
+<td></td>
+<td>0</td>
+<td>ViewCare.EnterSalesPointTest@73a1e9a9</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -287,39 +351,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ViewCare.ControllerUserActionsTest.testCreateNewUser()'><b>testCreateNewUser</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
-<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace194408994", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace194408994'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateNewUser()[pri:1, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>ViewCare.ControllerUserActionsTest@7b98f307</td></tr>
-<tr>
 <td title='ViewCare.ControllerUserActionsTest.testDeleteUser()'><b>testDeleteUser</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
-<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
+<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1802896480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1802896480'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace704948997", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace704948997'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testDeleteUser()[pri:8, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -341,41 +377,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.ControllerUserActionsTest@7b98f307</td></tr>
-<tr>
-<td title='ViewCare.ControllerUserActionsTest.testUpdateUser()'><b>testUpdateUser</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
-<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace463494712", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace463494712'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>ViewCare.ControllerUserActionsTest@7b98f307</td></tr>
+<td>ViewCare.ControllerUserActionsTest@4802796d</td></tr>
 <tr>
 <td title='ViewCare.ControllerUserActionsTest.testCreateUserPassword()'><b>testCreateUserPassword</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
-<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
+<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1048444228", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1048444228'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@7b98f307] depends on not successfully finished methods
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace923565253", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace923565253'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testCreateUserPassword()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -397,13 +405,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.ControllerUserActionsTest@7b98f307</td></tr>
+<td>ViewCare.ControllerUserActionsTest@4802796d</td></tr>
 <tr>
-<td title='ViewCare.EnterControllerTest.testAccessEquipmentController()'><b>testAccessEquipmentController</b><br>Test class: ViewCare.EnterControllerTest</td>
-<td><div><pre>java.lang.Throwable: Method EnterControllerTest.testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@71d44a3] depends on not successfully finished methods
+<td title='ViewCare.ControllerUserActionsTest.testUpdateUser()'><b>testUpdateUser</b><br>Test class: ViewCare.ControllerUserActionsTest</td>
+<td><div><pre>java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace310350177", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace310350177'><pre>java.lang.Throwable: Method EnterControllerTest.testAccessEquipmentController()[pri:2, instance:ViewCare.EnterControllerTest@71d44a3] depends on not successfully finished methods
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2058762296", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2058762296'><pre>java.lang.Throwable: Method ControllerUserActionsTest.testUpdateUser()[pri:2, instance:ViewCare.ControllerUserActionsTest@4802796d] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -425,7 +433,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>ViewCare.EnterControllerTest@71d44a3</td></tr>
+<td>ViewCare.ControllerUserActionsTest@4802796d</td></tr>
 </table><p>
 </body>
 </html>

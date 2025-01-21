@@ -24,7 +24,9 @@ public class SalesPointTest extends BaseTest {
     private static final By EQUIP_ONLINE_QTD = By.id("equipOnlineQtd");
     private static final By EQUIP_OFFLINE_QTD = By.id("equipOfflineQtd");
     private static final By TABLE_BODY = By.cssSelector("#listagem_dashboard_view_care table tbody");
+    private static final By TABLE_ROWS = By.cssSelector("#listagem_dashboard_view_care table tbody tr");
     private static final By PONTOS_DE_VENDA_QT = By.id("pontosDeVendaQtd");
+    private static final By TOTAL_EQUIPMENT = By.id("equipCadastradosQtd");
 
     @Test(priority = 1, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
     public void testOnlineEquipements() {
@@ -87,6 +89,25 @@ public class SalesPointTest extends BaseTest {
         }
     }
 
+    
+    @Test(priority = 2, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
+    public void testAssertNumberOfEquipments() {
+    	String totalEquipment = driver.findElement(TOTAL_EQUIPMENT).getText();     
+    	WebElement table =waitForElement(TABLE_BODY);
+    	scrollIntoView(table);
+    	List<WebElement> rows = driver.findElements(TABLE_ROWS);
+    	Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
+    	
+    	int tableEquipments = 0;
+    	for (WebElement row : rows) {
+            String rowQuantity = row.findElement(By.cssSelector("td[data-column-id=total_equip]")).getText();
+            tableEquipments += Integer.parseInt(rowQuantity);
+        }
+    	int totalEquipments = Integer.parseInt(totalEquipment);
+    	Assert.assertEquals(totalEquipment, tableEquipments, "Number of Equipments Did'nt match, the number from the card and the info contained in the table differ");
+    	   System.out.println("TEST testAssertNumberOfEquipments: passed");
+    }
+    
     @Test(priority = 2, dependsOnMethods = {"ViewCare.ViewCareTest.testViewCare"})
     public void testFoundClientSalesPoint() {
         System.out.println("\n---------------Filter Sales Points---------------\n");
