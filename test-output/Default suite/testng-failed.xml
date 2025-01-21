@@ -3,6 +3,34 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="ViewCare.SalesPointTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testFilterSalesPointByServiceOrder"/>
+          <include name="testAssertNumberOfCLients"/>
+          <include name="testFoundClientSalesPoint"/>
+        </methods>
+      </class> <!-- ViewCare.SalesPointTest -->
+      <class name="ViewCare.EnterSalesPointTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testValidatesNumberOfOS"/>
+          <include name="testFetchListAndClickTheTestSalesPoint"/>
+          <include name="testValidateNameSalesPoint"/>
+        </methods>
+      </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.ControllerUserActionsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testCreateUserPassword"/>
+          <include name="testCreateNewUser"/>
+          <include name="testUpdateUser"/>
+          <include name="testDeleteUser"/>
+        </methods>
+      </class> <!-- ViewCare.ControllerUserActionsTest -->
       <class name="base.LoginTest">
         <methods>
           <include name="setUp"/>
@@ -10,22 +38,6 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- base.LoginTest -->
-      <class name="ViewCare.EnterSalesPointTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testValidatesNumberOfOS"/>
-          <include name="testFetchListAndClickTheTestSalesPoint"/>
-        </methods>
-      </class> <!-- ViewCare.EnterSalesPointTest -->
-      <class name="ViewCare.SalesPointTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testAssertNumberOfCLients"/>
-          <include name="testFoundClientSalesPoint"/>
-        </methods>
-      </class> <!-- ViewCare.SalesPointTest -->
       <class name="ViewCare.ViewCareTest">
         <methods>
           <include name="setUp"/>
@@ -33,6 +45,14 @@
           <include name="testViewCare"/>
         </methods>
       </class> <!-- ViewCare.ViewCareTest -->
+      <class name="ViewCare.EnterControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testAccessEquipmentController"/>
+          <include name="testLastInfoFirstMonitorableIsValidController"/>
+        </methods>
+      </class> <!-- ViewCare.EnterControllerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

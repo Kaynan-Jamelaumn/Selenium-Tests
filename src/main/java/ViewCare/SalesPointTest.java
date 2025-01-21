@@ -142,7 +142,7 @@ public class SalesPointTest extends BaseTest {
     }
 
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})
-    public void testAssertNumberOfCLients() {
+    public void testAssertNumberOfSalesPoints() {
         WebElement tableBody = waitForElement(TABLE_BODY);
         WebElement pontosDeVendaQt = waitForElement(PONTOS_DE_VENDA_QT);
         int numberOfSalesPoints = Integer.parseInt(pontosDeVendaQt.getText().trim());
@@ -150,7 +150,7 @@ public class SalesPointTest extends BaseTest {
         List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
         Assert.assertFalse(rows.isEmpty(), "Client sales point list is not found!");
         Assert.assertEquals(numberOfSalesPoints, rows.size(), "Number of Shown Sales Points And Number of Sales Points Are Different");
-        System.out.println("TEST testAssertNumberOfCLients: Number of Sales points and  number of Sales Points Match");
+        System.out.println("TEST testAssertNumberOfSalesPoints: Number of Sales points and  number of Sales Points Match");
     }
 
     @Test(priority = 3, dependsOnMethods = {"testFoundClientSalesPoint"})

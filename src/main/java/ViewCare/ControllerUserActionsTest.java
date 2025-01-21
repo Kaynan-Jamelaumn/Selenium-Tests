@@ -2,10 +2,13 @@ package ViewCare;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -27,7 +30,6 @@ public class ControllerUserActionsTest extends BaseTest {
     private static final By CREATE_USER_BUTTON = By.cssSelector("#botoes_usuarios_controlador .simtro-text-button:nth-of-type(1)");
     private static final By MODAL_ADD_USER = By.id("myModalAdicionarUsuarioControlador");
     
-    private static final By ADD_USER_BUTTON = By.id("botao_usuario_modal");
     private static final By DELETE_USER_BUTTON = By.cssSelector("#botoes_usuarios_controlador .simtro-text-button:nth-of-type(3)");
     private static final By DELETE_USER_SELECT = By.cssSelector("#controlador_usuario_deletar");
     private static final By CONFIRM_DELETE_USER_BUTTON = By.cssSelector("#myModalExcluirUsuarioControlador .modal-footer a:nth-of-type(2)");
@@ -52,6 +54,7 @@ public class ControllerUserActionsTest extends BaseTest {
     private static final String NEW_USER_EMAIL_WRONG = "A";
     private static final String NEW_USER_CPF_WRONG = "333.33.160-33";
     
+    private static final String UPDATE_ADDITIONAL = " Update";
     
     private static final By MODAL_NAME_INPUT = By.id("controlador_usuario_nome");
     private static final By MODAL_SURNAME_INPUT =By.id("controlador_usuario_sobrenome");
@@ -100,13 +103,117 @@ public class ControllerUserActionsTest extends BaseTest {
         validateNewUserEntry(newRows, NEW_USER_NAME);
 	        System.out.println("TEST testCreateNewUser: passed");
     }
-    
     @Test(priority = 2, dependsOnMethods = {"testCreateNewUser"})
+    public void testUpdateUser() {
+
+        WebElement user = findUserByName(USER_ROWS, NEW_USER_NAME);
+        clickElement(user);
+
+        waitForElement(MODAL_ADD_USER);
+        validateModalFields();
+
+        updateUserFields(UPDATE_ADDITIONAL);
+
+        clickButton(MODAL_ADD_USER_BUTTON);
+        waitForLoadingSpinner();
+
+        Assert.assertEquals(waitForElement(INFO_MESSAGE).getText(), "Usuário atualizado com sucesso.", "Failed to update user.");
+        clickButton(MODAL_CONFIRM_BUTTON);
+
+        WebElement updatedUser = findUserByName(USER_ROWS, NEW_USER_NAME + UPDATE_ADDITIONAL);
+        clickElement(updatedUser);
+
+        waitForElement(MODAL_ADD_USER);
+        validateUpdatedFields(UPDATE_ADDITIONAL);
+
+        clickButton(MODAL_CLOSE_BUTTON);
+
+        System.out.println("TEST testUpdateUser: passed");
+    }
+
+    private WebElement findUserByName(By rowSelector, String userName) {
+        List<WebElement> rows = waitForElements(rowSelector);
+        return rows.stream()
+                .filter(row -> {
+                    List<WebElement> cells = row.findElements(By.tagName("td"));
+                    return cells.get(1).getText().equals(userName);
+                })
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("User not found with name: " + userName));
+    }
+
+    private void clickElement(WebElement element) {
+        scrollIntoView(element);
+        new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(element));
+        try {
+            element.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        }
+    }
+
+    private void validateModalFields() {
+        validateFieldValue(MODAL_NAME_INPUT, NEW_USER_NAME, "New User Name");
+        validateFieldValue(MODAL_SURNAME_INPUT, NEW_USER_SURNAME, "New User Surname");
+        validateFieldValue(MODAL_REGISTRATION_INPUT, NEW_USER_REGISTRATION, "New Registration Name");
+        validateFieldValue(MODAL_EMAIL_INPUT, NEW_USER_EMAIL, "New User Email");
+        validateFieldValue(MODAL_CPF_INPUT, NEW_USER_CPF, "New User CPF");
+        validateFieldValue(MODAL_BIRTH_DATE_INPUT, NEW_USER_BIRTH_DATE, "New User BirthDate");
+       // validateFieldValue(MODAL_PHONE_NUMBER_INPUT, NEW_USER_PHONE_NUMBER, "New User Phone Number");
+        validateDropdownValue(MODAL_PERMITED_TIME_INPUT, NEW_USER_PERMITED_TIME, "New User Permitted Time");
+    }
+
+    private void validateUpdatedFields(String updateValue) {
+        validateFieldValue(MODAL_NAME_INPUT, NEW_USER_NAME + updateValue, "Updated User Name");
+        validateFieldValue(MODAL_SURNAME_INPUT, NEW_USER_SURNAME + updateValue, "Updated User Surname");
+        validateFieldValue(MODAL_REGISTRATION_INPUT, NEW_USER_REGISTRATION + updateValue, "Updated Registration Name");
+        validateFieldValue(MODAL_EMAIL_INPUT, NEW_USER_EMAIL + updateValue, "Updated User Email");
+        validateFieldValue(MODAL_CPF_INPUT, NEW_USER_CPF, "Updated User CPF");
+        validateFieldValue(MODAL_BIRTH_DATE_INPUT, NEW_USER_BIRTH_DATE , "Updated User BirthDate");
+       // validateFieldValue(MODAL_PHONE_NUMBER_INPUT, NEW_USER_PHONE_NUMBER + updateValue, "Updated User Phone Number");
+        validateDropdownValue(MODAL_PERMITED_TIME_INPUT, NEW_USER_PERMITED_TIME, "Updated User Permitted Time");
+    }
+
+    private void validateFieldValue(By fieldLocator, String expectedValue, String fieldName) {
+        WebElement field = driver.findElement(fieldLocator);
+        Assert.assertEquals(field.getAttribute("value"), expectedValue, "Fields Didn't Match (" + fieldName + ")");
+    }
+
+    private void validateDropdownValue(By dropdownLocator, String expectedValue, String fieldName) {
+        Select dropdown = new Select(driver.findElement(dropdownLocator));
+        Assert.assertEquals(dropdown.getFirstSelectedOption().getText(), expectedValue, "Fields Didn't Match (" + fieldName + ")");
+    }
+
+    private void updateUserFields(String updateValue) {
+        fillField(MODAL_NAME_INPUT, updateValue);
+        fillField(MODAL_SURNAME_INPUT, updateValue);
+        fillField(MODAL_REGISTRATION_INPUT, updateValue);
+        fillField(MODAL_EMAIL_INPUT, updateValue);
+    }
+
+    private void fillField(By fieldLocator, String value) {
+        WebElement field = driver.findElement(fieldLocator);
+        //field.clear();
+        field.sendKeys(value);
+    }
+
+    private void waitForLoadingSpinner() {
+        waitForElement(LOADING_SPINNER);
+        waitForElementToDisappear(LOADING_SPINNER);
+    }
+
+    @Test(priority = 2, dependsOnMethods = {"testUpdateUser"})
+    public void testCreateUserPassword() {
+
+    }
+    
+    
+    @Test(priority = 8, dependsOnMethods = {"testCreateNewUser"})
     public void testDeleteUser() {
        
     	clickButton(DELETE_USER_BUTTON);
     	
-    	selectDropdownOptionOnText(DELETE_USER_SELECT, (NEW_USER_NAME + " " + NEW_USER_SURNAME));
+    	selectDropdownOptionOnText(DELETE_USER_SELECT, (NEW_USER_NAME + UPDATE_ADDITIONAL + " " + NEW_USER_SURNAME + UPDATE_ADDITIONAL));
     	
     	clickButton(CONFIRM_DELETE_USER_BUTTON);
     	

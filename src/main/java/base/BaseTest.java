@@ -123,58 +123,7 @@ public class BaseTest {
     }
 
 
-    @BeforeClass
-    protected void setUp() throws IOException {
-        // Initialize WebDriver (e.g., FirefoxDriver)
-        if (driver == null) {
-        	
-            FirefoxOptions options = new FirefoxOptions();
    
-            options.setCapability("webSocketUrl", true); // enables bidi
-
-            
-            // Set up the download directory
-            options.addPreference("browser.download.folderList", 2);
-            options.addPreference("browser.download.dir", DOWNLOAD_DIR);
-            options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
-            
-            driver = new FirefoxDriver(options);
-            
-            //ChromeOptions options = new ChromeOptions();
-            options.setAcceptInsecureCerts(true);
-            // Configurações de download
-            //options.addArguments("download.default_directory=" + DOWNLOAD_DIR); // Diretório de download
-            //options.addArguments("download.prompt_for_download=false"); // Não pedir confirmação para downloads
-
-            // Configuração de execução sem interface gráfica (headless), caso necessário
-            /*
-            options.addArguments("--headless"); // Ativa o modo sem interface gráfica
-            options.addArguments("--disable-gpu"); // Melhora o desempenho em headless
-            options.addArguments("--no-sandbox"); // Desabilita o sandbox
-            options.addArguments("--disable-dev-shm-usage"); // Otimização para o modo headless*/
-
-            // Inicializar o ChromeDriver com as opções configuradas
-          //  driver = new ChromeDriver(options);
-
-            driver.manage().window().maximize();
-            
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            driver.get(BASE_URL);
-            driver.manage().deleteAllCookies();
-            
-            //File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            //FileUtils.copyFile(src,new File("C://screenshot.png"));
-            //captureScreenshot("setup_initial.png");
-        }
-    }
-
-    @AfterClass
-    protected void tearDown() {
-        // Close the browser after tests
-        if (driver != null) {
-         //   driver.quit();
-        }
-    }
     
 
     protected void closeExtraTabs() {
@@ -253,6 +202,65 @@ public class BaseTest {
     protected void selectDropdownOptionOnText(By selector, String text) {
         WebElement dropdown = driver.findElement(selector);
         new Select(dropdown).selectByVisibleText(text);
+    }
+    
+    
+    
+    
+    
+    
+    
+    @BeforeClass
+    protected void setUp() throws IOException {
+        // Initialize WebDriver (e.g., FirefoxDriver)
+        if (driver == null) {
+        	
+            FirefoxOptions options = new FirefoxOptions();
+   
+            options.setCapability("webSocketUrl", true); // enables bidi
+
+            
+            // Set up the download directory
+            options.addPreference("browser.download.folderList", 2);
+            options.addPreference("browser.download.dir", DOWNLOAD_DIR);
+            options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
+            
+            driver = new FirefoxDriver(options);
+            
+            //ChromeOptions options = new ChromeOptions();
+            options.setAcceptInsecureCerts(true);
+            // Configurações de download
+            //options.addArguments("download.default_directory=" + DOWNLOAD_DIR); // Diretório de download
+            //options.addArguments("download.prompt_for_download=false"); // Não pedir confirmação para downloads
+
+            // Configuração de execução sem interface gráfica (headless), caso necessário
+            /*
+            options.addArguments("--headless"); // Ativa o modo sem interface gráfica
+            options.addArguments("--disable-gpu"); // Melhora o desempenho em headless
+            options.addArguments("--no-sandbox"); // Desabilita o sandbox
+            options.addArguments("--disable-dev-shm-usage"); // Otimização para o modo headless*/
+
+            // Inicializar o ChromeDriver com as opções configuradas
+          //  driver = new ChromeDriver(options);
+
+            driver.manage().window().maximize();
+            
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            driver.get(BASE_URL);
+            driver.manage().deleteAllCookies();
+            
+            //File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            //FileUtils.copyFile(src,new File("C://screenshot.png"));
+            //captureScreenshot("setup_initial.png");
+        }
+    }
+
+    @AfterClass
+    protected void tearDown() {
+        // Close the browser after tests
+        if (driver != null) {
+         //   driver.quit();
+        }
     }
     
     

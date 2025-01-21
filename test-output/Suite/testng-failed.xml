@@ -3,6 +3,14 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="AllTests(failed)">
     <classes>
+      <class name="ViewCare.EnterControllerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testAccessEquipmentController"/>
+          <include name="testLastInfoFirstMonitorableIsValidController"/>
+        </methods>
+      </class> <!-- ViewCare.EnterControllerTest -->
       <class name="base.LoginTest">
         <methods>
           <include name="setUp"/>
@@ -14,7 +22,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testAssertNumberOfCLients"/>
+          <include name="testAssertNumberOfSalesPoints"/>
           <include name="testFoundClientSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.SalesPointTest -->
@@ -26,6 +34,16 @@
           <include name="testFetchListAndClickTheTestSalesPoint"/>
         </methods>
       </class> <!-- ViewCare.EnterSalesPointTest -->
+      <class name="ViewCare.ControllerUserActionsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testCreateUserPassword"/>
+          <include name="testCreateNewUser"/>
+          <include name="testUpdateUser"/>
+          <include name="testDeleteUser"/>
+        </methods>
+      </class> <!-- ViewCare.ControllerUserActionsTest -->
       <class name="ViewCare.ViewCareTest">
         <methods>
           <include name="setUp"/>
